@@ -1,6 +1,7 @@
 import React from "react";
 import { useOutlet } from "react-router-dom";
 
+import { Header } from "~/components/Header";
 import { StyledContent } from "./styled";
 
 const Layout: React.FC = () => {
@@ -8,7 +9,7 @@ const Layout: React.FC = () => {
 
   return (
     <>
-      Header
+      <Header />
       <StyledContent>{outlet}</StyledContent>
       Footer
     </>
