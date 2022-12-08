@@ -28,21 +28,29 @@ const Media: React.FC = () => (
       dui, aliquam, tempor. Faucibus morbi turpis. Lorem ipsum dolor sit amet,
       consectetur adipiscing elit.
     </StyledText>
+
     <StyledWrapper>
       <StyledContent>
         <StyledItem>
           <StyledItemImage>
             <StyledContentMedia src="images/media_img1.jpg" alt="media_img1" />
           </StyledItemImage>
+
           <StyledItemInfo>
             <StyledContentTitle>Laptops</StyledContentTitle>
-            <StyledContentText>True Laptop Solution</StyledContentText>
+            <StyledContentText>
+              True Laptop
+              <br />
+              Solution
+            </StyledContentText>
           </StyledItemInfo>
         </StyledItem>
+
         <StyledItemDown>
-          <StyledItemImage>
+          <StyledItemDown>
             <StyledContentMedia src="images/media_img1_2.jpg" alt="media_img1_2" />
-          </StyledItemImage>
+          </StyledItemDown>
+
           <StyledItemInfo>
             <StyledContentTitle>Watch</StyledContentTitle>
             <StyledContentText>Not just stylisht</StyledContentText>
@@ -54,6 +62,7 @@ const Media: React.FC = () => (
         <StyledColumnImage>
           <StyledContentMedia src="images/media_img2.jpg" alt="media_img2" />
         </StyledColumnImage>
+
         <StyledColumnInfo>
           <StyledColumnTitle>Phones</StyledColumnTitle>
           <StyledColumnText>Your day to day life</StyledColumnText>
@@ -65,6 +74,7 @@ const Media: React.FC = () => (
           <StyledColumnTitle>Tablet</StyledColumnTitle>
           <StyledColumnText>Empower your work</StyledColumnText>
         </StyledColumnInfo>
+
         <StyledColumnImage>
           <StyledContentMedia src="images/media_img3.jpg" alt="media_img3" />
         </StyledColumnImage>

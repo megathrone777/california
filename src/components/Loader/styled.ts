@@ -23,7 +23,7 @@ export const StyledContent = styled.div`
   }): FlattenInterpolation<ThemeProps<DefaultTheme>> => css`
     animation: ${spin} 0.5s linear infinite;
     border-radius: 50%;
-    border: ${rem(10)} solid ${colors.orange};
+    border: ${rem(10)} solid ${colors.greenLight};
     border-top-color: transparent;
     height: ${rem(60)};
     left: 0;
