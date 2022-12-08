@@ -73,7 +73,7 @@ export const StyledButton = styled.button`
     border: ${rem(1)} solid black;
     min-width: ${rem(170)};
     padding-inline: ${rem(5)};
-    // margin-bottom: ${rem(30)};
+    margin-bottom: ${rem(30)};
     transition-duration: 0.2s;
     transition-timing-function: ease-in;
     transition-property: background-color, color;
