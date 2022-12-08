@@ -42,7 +42,6 @@ export const StyledContent = styled.div`
     display: flex;
     flex-direction: column;
     gap: ${rem(70)};
-    // height: ${rem(820)};
     flex-basis: ${rem(640)};
     // align-self: baseline;
   `};
@@ -72,6 +71,16 @@ export const StyledItem = styled.div`
     align-items: flex-end;
     max-width: ${rem(640)};
     padding-block: ${rem(145)};
+    background-color: gray;
+  `};
+`;
+
+export const StyledItemDown = styled.div`
+  ${({ theme: { rem } }): string => `
+    display: flex;
+    justify-content: center;
+    // max-width: ${rem(640)};
+    padding-left: ${rem(40)};
     background-color: gray;
   `};
 `;
@@ -147,6 +156,7 @@ export const StyledItemInfo = styled.div`
   ${({ theme: { rem } }): string => `
     display: flex;
     flex-direction: column;
+    aligh-items: center;
     width: ${rem(250)};
   `};
 `;
