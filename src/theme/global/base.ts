@@ -17,11 +17,8 @@ const base = css`
 
   body {
     -webkit-font-smoothing: antialiased;
-    ${({ theme: { fonts } }): string => `
-      font-family: "JetBrainsMono";
-      font-weight: ${fonts.normal};
-      margin: 0;
-    `};
+    font-family: "Inter";
+    margin: 0;
   }
 
   svg {
@@ -31,10 +28,12 @@ const base = css`
 
   img {
     max-width: 100%;
+    vertical-align: middle;
   }
 
   button {
     cursor: pointer;
+    background-color: transparent;
   }
 `;
 

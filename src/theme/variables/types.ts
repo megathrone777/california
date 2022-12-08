@@ -10,5 +10,6 @@ export interface TDevices {
 
 export interface TFonts {
   initialFontSize: number;
-  normal: number;
+  fontInter: string;
+  fontReadex: string;
 }
