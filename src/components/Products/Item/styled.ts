@@ -1,6 +1,9 @@
 import { styled } from "~/theme";
 
 export const StyledWrapper = styled.div`
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
     width: 25%;
     flex: 0 1 25%;
 `;
