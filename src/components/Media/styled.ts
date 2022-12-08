@@ -1,5 +1,7 @@
 import { styled } from "~/theme";
 
+import { fonts } from "~/theme/variables";
+
 export const StyledLayout = styled.div`
   ${({ theme: { rem } }): string => `
     margin-bottom: ${rem(80)};
@@ -17,9 +19,9 @@ export const StyledWrapper = styled.div`
 export const StyledTitle = styled.h2`
   ${({ theme: { rem } }): string => `
     color: black;
-    font-family: "Readex";
+    font-family: ${fonts.fontReadex};
     font-size: ${rem(42)};
-    line-height: ${rem(52.5)};
+    line-height: ${rem(53)};
     margin-bottom: ${rem(10)};
     text-align: center;
   `};
@@ -28,9 +30,9 @@ export const StyledTitle = styled.h2`
 export const StyledText = styled.p`
   ${({ theme: { rem } }): string => `
     color: black;
-    font-family: "Readex";
+    font-family: ${fonts.fontReadex};
     font-size: ${rem(14)};
-    line-height: ${rem(16.8)};
+    line-height: ${rem(17)};
     margin: 0 auto ${rem(55)};
     max-width: ${rem(630)};
     text-align: center;
@@ -55,7 +57,7 @@ export const StyledColumn = styled.div`
     flex-direction: column;
     gap: ${rem(40)};
     max-width: ${rem(310)};
-    box-shadow: 0px 4px 35px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px ${rem(4)} ${rem(35)} ${rem(0)} rgba(0,0,0,0.25);
   `};
 `;
 
@@ -63,7 +65,7 @@ export const StyledItem = styled.div`
   ${({ theme: { rem } }): string => `
     padding-left: ${rem(40)};
     max-width: ${rem(640)};
-    box-shadow: 0px 4px 35px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px ${rem(4)} ${rem(35)} ${rem(0)} rgba(0,0,0,0.25);
   `};
 `;
 
@@ -73,14 +75,14 @@ export const StyledItemDown = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
-    box-shadow: 0px 4px 35px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px ${rem(4)} ${rem(35)} ${rem(0)} rgba(0,0,0,0.25);
   `};
 `;
 
 export const StyledColumnTitle = styled.h2`
   ${({ theme: { rem } }): string => `
     color: black;
-    font-family: "Readex";
+    font-family: ${fonts.fontReadex};
     font-size: ${rem(15)};
     line-height: ${rem(19)};
     text-align: center;
@@ -90,7 +92,7 @@ export const StyledColumnTitle = styled.h2`
 export const StyledItemInfo = styled.div`
   ${({ theme: { rem } }): string => `
     color: black;
-    font-family: "Readex";
+    font-family: ${fonts.fontReadex};
     padding-right: ${rem(40)};
     text-align: right;
   `};
@@ -113,7 +115,7 @@ export const StyledContentText = styled.p`
 export const StyledColumnText = styled.p`
   ${({ theme: { rem } }): string => `
     color: black;
-    font-family: "Readex";
+    font-family: ${fonts.fontReadex};
     font-size: ${rem(32)};
     line-height: ${rem(38)};
     text-align: center;
@@ -131,9 +133,11 @@ export const StyledColumnImage = styled.div`
 `;
 
 export const StyledItemImage = styled.div`
-  height: 377px;
-  text-align: left;
-  width: 100%;
+  ${({ theme: { rem } }): string => `
+    height: ${rem(377)};
+    text-align: left;
+    width: 100%;
+  `};
 `;
 
 export const StyledColumnInfo = styled.div`
