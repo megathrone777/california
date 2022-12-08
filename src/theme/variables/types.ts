@@ -13,3 +13,11 @@ export interface TFonts {
   fontInter: string;
   fontReadex: string;
 }
+
+export interface TProps {
+  id: string;
+  imageUrl: string;
+  name: string;
+  description: string;
+  price: number;
+}

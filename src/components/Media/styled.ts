@@ -140,6 +140,11 @@ export const StyledItemImage = styled.div`
   `};
 `;
 
+export const StyledItemDownImage = styled.div`
+  height: 100%;
+  text-align: left;
+`;
+
 export const StyledColumnInfo = styled.div`
   ${({ theme: { rem } }): string => `
     display: flex;

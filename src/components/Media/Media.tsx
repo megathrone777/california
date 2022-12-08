@@ -17,7 +17,8 @@ import {
   StyledColumnImage,
   StyledItemImage,
   StyledItemInfo,
-  StyledItemDown
+  StyledItemDown,
+  StyledItemDownImage
 } from "./styled";
 
 const Media: React.FC = () => (
@@ -47,9 +48,9 @@ const Media: React.FC = () => (
         </StyledItem>
 
         <StyledItemDown>
-          <StyledItemDown>
+          <StyledItemDownImage>
             <StyledContentMedia src="images/media_img1_2.jpg" alt="media_img1_2" />
-          </StyledItemDown>
+          </StyledItemDownImage>
 
           <StyledItemInfo>
             <StyledContentTitle>Watch</StyledContentTitle>
