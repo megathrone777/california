@@ -1,4 +1,6 @@
 export { App } from "./App";
 export { Layout } from "./Layout";
 export { Loader } from "./Loader";
-export { Header } from "./Header/Menu";
+export { Header } from "./Header";
+export { Slider } from "./Slider";
+

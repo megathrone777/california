@@ -1,5 +1,5 @@
 export interface TColors {
-  orange: string;
+  greenLight: string;
 }
 
 export interface TDevices {

@@ -7,11 +7,14 @@ export const StyledWrapper = styled.li`
 `;
 
 export const StyledLink = styled.a`
-  text-decoration: none;
-  text-transform: uppercase;
-  color: black;
+  ${({ theme: { rem } }): string => `
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: ${rem(14)};
 
-  &:hover {
-    opacity: 0.7;
-  }
+    &:hover {
+      opacity: 0.7;
+    }
+  `}
 `;
