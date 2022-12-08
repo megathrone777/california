@@ -42,13 +42,10 @@ export const StyledContent = styled.div`
     display: flex;
     flex-direction: column;
     gap: ${rem(70)};
+    max-height: 600px;
     flex-basis: ${rem(640)};
     // align-self: baseline;
   `};
-
-  /* &:last-of-type {
-    display: flex;
-  } */
 `;
 
 export const StyledColumn = styled.div`
