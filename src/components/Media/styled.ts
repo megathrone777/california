@@ -79,7 +79,7 @@ export const StyledItemDown = styled.div`
   ${({ theme: { rem } }): string => `
     display: flex;
     justify-content: center;
-    // max-width: ${rem(640)};
+    max-width: ${rem(640)};
     padding-left: ${rem(40)};
     background-color: gray;
   `};
@@ -139,9 +139,7 @@ export const StyledColumnImage = styled.div`
 `;
 
 export const StyledItemImage = styled.div`
-  ${({ theme: { rem } }): string => `
-    padding-right: ${rem(100)};
-  `};
+
 `;
 
 export const StyledColumnInfo = styled.div`
@@ -156,7 +154,7 @@ export const StyledItemInfo = styled.div`
   ${({ theme: { rem } }): string => `
     display: flex;
     flex-direction: column;
-    aligh-items: center;
     width: ${rem(250)};
+    margin-top: ${rem(90)};
   `};
 `;
