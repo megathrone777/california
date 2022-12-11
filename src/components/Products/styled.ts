@@ -23,7 +23,7 @@ export const StyledText = styled.p`
     font-family: ${fonts.fontReadex};
     font-size: ${rem(13)};
     line-height: ${rem(17)};
-    margin-bottom: ${rem(30)};
+    margin-bottom: ${rem(60)};
     text-align: center;
   `};
 `;
