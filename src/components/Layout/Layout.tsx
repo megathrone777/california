@@ -8,6 +8,7 @@ import {
   Products,
   Ideas,
   Search,
+  Thing,
 } from "~/components";
 import { StyledWrapper } from "./styled";
 
@@ -20,6 +21,7 @@ const Layout: React.FC = () => (
     <Categories />
     <Ideas />
     <Search />
+    <Thing />
     Footer
   </StyledWrapper>
 );

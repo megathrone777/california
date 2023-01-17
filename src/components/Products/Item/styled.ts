@@ -38,4 +38,5 @@ export const StyledDescription = styled("div")(({ theme: { rem } }) => ({
 export const StyledPrice = styled("p")(({ theme: { rem } }) => ({
   fontSize: rem(18),
   lineHeight: rem(22),
+  fontWeight: "bold",
 }));
