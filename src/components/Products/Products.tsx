@@ -22,7 +22,7 @@ const Products: React.FC = () => (
         id="2"
         imageUrl="images/item_img2.jpg"
         name="Smart Galaxy Watch 3"
-        description="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+        description="Neque porro quisquam est qui dolorem ipsum quia dolor si velit...nsectetur, adipisci velit..."
         price={199}
       />
       <Item

@@ -1,6 +1,10 @@
 import { styled } from "~/theme";
 
-export const StyledWrapper = styled.div``;
+export const StyledWrapper = styled.div`
+  ${({ theme: { rem } }): string => `
+    margin-bottom: ${rem(75)};
+  `};
+`;
 
 export const StyledTitle = styled.h2`
   ${({ theme: { rem, fonts} }): string => `
