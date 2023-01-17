@@ -1,6 +1,9 @@
 import { styled } from "~/theme";
 
 export const StyledWrapper = styled.div`
+    /* display: flex;
+    flex-direction: column;
+    justify-content: flex-end; */
     width: 25%;
     flex: 0 1 25%;
 `;
@@ -28,7 +31,7 @@ export const StyledDescription = styled.p`
   ${({ theme: { rem } }): string => `
     font-size: ${rem(14)};
     line-height: ${rem(17)};
-    min-height: ${rem(35)};
+    min-height: ${rem(50)};
     width: ${rem(260)};
     margin-bottom: ${rem(25)};
   `};
