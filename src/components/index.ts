@@ -8,3 +8,4 @@ export { Products } from "./Products";
 export { Slider } from "./Slider";
 export { Ideas } from "./Ideas";
 export { Search } from "./Search";
+export { Thing } from "./Thing";

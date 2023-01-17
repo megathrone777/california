@@ -34,7 +34,7 @@ const Search: React.FC = () => {
       <StyledForm>
         <StyledInput
           type="text"
-          placeholder="Seach keyword"
+          placeholder="Search keyword"
           value={inputValue}
           onChange={handleInputValue}
         />
