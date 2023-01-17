@@ -1,6 +1,14 @@
 import React from "react";
 
-import { Categories, Header, Slider, Media, Products } from "~/components";
+import {
+  Categories,
+  Header,
+  Slider,
+  Media,
+  Products,
+  Ideas,
+  Search,
+} from "~/components";
 import { StyledWrapper } from "./styled";
 
 const Layout: React.FC = () => (
@@ -10,6 +18,8 @@ const Layout: React.FC = () => (
     <Media />
     <Products />
     <Categories />
+    <Ideas />
+    <Search />
     Footer
   </StyledWrapper>
 );

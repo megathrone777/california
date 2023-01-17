@@ -6,3 +6,5 @@ export { Loader } from "./Loader";
 export { Media } from "./Media";
 export { Products } from "./Products";
 export { Slider } from "./Slider";
+export { Ideas } from "./Ideas";
+export { Search } from "./Search";
