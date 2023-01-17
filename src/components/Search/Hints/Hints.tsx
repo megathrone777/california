@@ -23,7 +23,7 @@ const Hints: React.FC<TProps> = ({ onSelect }) => {
   const handleButtonClick = (
     event: React.SyntheticEvent<HTMLButtonElement>
   ): void => {
-    onSelect(event.currentTarget.value);
+    onSelect(event.currentTarget.textContent);
   };
 
   useEffect((): void => {

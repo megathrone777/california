@@ -19,8 +19,12 @@ const Search: React.FC = () => {
     setInputValue(event.currentTarget.value);
   };
 
-  const handleHintSelect = (hint: string): void => {
-    // setInputValue(hint);
+  const handleHintSelect = (hint: string | null): void => {
+    if (hint) {
+      setInputValue((prevState) => `${prevState} ${hint}`);
+    }
+
+    // setInputValue("");
   };
 
   return (
