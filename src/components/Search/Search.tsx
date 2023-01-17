@@ -20,7 +20,7 @@ const Search: React.FC = () => {
   };
 
   const handleHintSelect = (hint: string): void => {
-    setInputValue(hint);
+    // setInputValue(hint);
   };
 
   return (
