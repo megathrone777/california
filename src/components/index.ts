@@ -9,3 +9,4 @@ export { Slider } from "./Slider";
 export { Ideas } from "./Ideas";
 export { Search } from "./Search";
 export { Thing } from "./Thing";
+export { Footer } from "./Footer";
