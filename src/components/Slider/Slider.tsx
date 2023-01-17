@@ -1,33 +1,55 @@
-import React from "react";
-
-import { Navigation as SliderNavigation } from "./Navigation";
-import { Item } from "./Item";
+import React, { useEffect, useState } from "react";
+import { Pagination, Scrollbar } from "swiper";
 import { SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar } from "swiper";
+
+import { Loader } from "~/components";
+import { Navigation } from "./Navigation";
+import { Item } from "./Item";
+import { TSlide } from "./Item/types";
 import { StyledWrapper } from "./styled";
 
 const Slider: React.FC = () => {
+  const [slides, setSlides] = useState<TSlide[]>([]);
+  const [slidesLoading, toggleLoading] = useState<boolean>(true);
+
+  const getSlides = (): void => {
+    fetch(`data/slides.json`)
+      .then((response: Response): Promise<TSlide[]> => response.json())
+      .then((data: TSlide[]): void => {
+        setSlides(data);
+      })
+      .catch((): void => {
+        setSlides([]);
+      })
+      .finally((): void => {
+        toggleLoading(false);
+      });
+  };
+
+  useEffect((): void => {
+    getSlides();
+  }, []);
+
   return (
-    <>
-      <StyledWrapper
-        modules={[Navigation, Pagination, Scrollbar]}
-        spaceBetween={50}
-        slidesPerView={1}
-        pagination={{ clickable: true }}
-        loop
-      >
-        <SwiperSlide>
-          <Item />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Item />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Item />
-        </SwiperSlide>
-        <SliderNavigation />
-      </StyledWrapper>
-    </>
+    <StyledWrapper
+      loop
+      modules={[Navigation, Pagination, Scrollbar]}
+      pagination={{ clickable: true }}
+      slidesPerView={1}
+      spaceBetween={50}
+    >
+      {slides &&
+        !!slides.length &&
+        slides.map(
+          ({ id, ...rest }: TSlide): React.ReactElement => (
+            <SwiperSlide key={id}>
+              <Item {...{ id }} {...rest} />
+            </SwiperSlide>
+          )
+        )}
+
+      {slidesLoading && <Loader />}
+    </StyledWrapper>
   );
 };
 

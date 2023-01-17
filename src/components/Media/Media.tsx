@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   StyledLayout,
@@ -18,70 +18,90 @@ import {
   StyledItemImage,
   StyledItemInfo,
   StyledItemDown,
-  StyledItemDownImage
+  StyledItemDownImage,
 } from "./styled";
 
-const Media: React.FC = () => (
-  <StyledLayout>
-    <StyledTitle>Shop our latest offers and categories</StyledTitle>
-    <StyledText>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque in est
-      dui, aliquam, tempor. Faucibus morbi turpis. Lorem ipsum dolor sit amet,
-      consectetur adipiscing elit.
-    </StyledText>
+const Media: React.FC = () => {
+  const [isVisible, toggleVisible] = useState<boolean>(false);
 
-    <StyledWrapper>
-      <StyledContent>
-        <StyledItem>
-          <StyledItemImage>
-            <StyledContentMedia src="images/media_img1.jpg" alt="media_img1" />
-          </StyledItemImage>
+  useEffect((): void => {
+    window.addEventListener("scroll", (): void => {
+      if (window.scrollY > 800) {
+        toggleVisible(true);
 
-          <StyledItemInfo>
-            <StyledContentTitle>Laptops</StyledContentTitle>
-            <StyledContentText>
-              True Laptop
-              <br />
-              Solution
-            </StyledContentText>
-          </StyledItemInfo>
-        </StyledItem>
+        return;
+      }
 
-        <StyledItemDown>
-          <StyledItemDownImage>
-            <StyledContentMedia src="images/media_img1_2.jpg" alt="media_img1_2" />
-          </StyledItemDownImage>
+      if (window.scrollY === 0) {
+        toggleVisible(false);
 
-          <StyledItemInfo>
-            <StyledContentTitle>Watch</StyledContentTitle>
-            <StyledContentText>Not just stylisht</StyledContentText>
-          </StyledItemInfo>
-        </StyledItemDown>
-      </StyledContent>
+        return;
+      }
+    });
+  }, []);
 
-      <StyledColumn>
-        <StyledColumnImage>
-          <StyledContentMedia src="images/media_img2.jpg" alt="media_img2" />
-        </StyledColumnImage>
+  return (
+    <StyledLayout>
+      <StyledTitle>Shop our latest offers and categories</StyledTitle>
+      <StyledText>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque in est
+        dui, aliquam, tempor. Faucibus morbi turpis. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.
+      </StyledText>
 
-        <StyledColumnInfo>
-          <StyledColumnTitle>Phones</StyledColumnTitle>
-          <StyledColumnText>Your day to day life</StyledColumnText>
-        </StyledColumnInfo>
-      </StyledColumn>
+      <StyledWrapper>
+        <StyledContent>
+          <StyledItem>
+            <StyledItemImage>
+              <StyledContentMedia src="images/media_img1.jpg" alt="media_img1" />
+            </StyledItemImage>
 
-      <StyledColumn>
-        <StyledColumnInfo>
-          <StyledColumnTitle>Tablet</StyledColumnTitle>
-          <StyledColumnText>Empower your work</StyledColumnText>
-        </StyledColumnInfo>
+            <StyledItemInfo>
+              <StyledContentTitle>Laptops</StyledContentTitle>
+              <StyledContentText>
+                True Laptop
+                <br />
+                Solution
+              </StyledContentText>
+            </StyledItemInfo>
+          </StyledItem>
 
-        <StyledColumnImage>
-          <StyledContentMedia src="images/media_img3.jpg" alt="media_img3" />
-        </StyledColumnImage>
-      </StyledColumn>
-    </StyledWrapper>
-  </StyledLayout>
-);
+          <StyledItemDown {...{ isVisible }}>
+            <StyledItemDownImage>
+              <StyledContentMedia alt="media_img1_2" src="images/media_img1_2.jpg" />
+            </StyledItemDownImage>
+
+            <StyledItemInfo>
+              <StyledContentTitle>Watch</StyledContentTitle>
+              <StyledContentText>Not just stylisht</StyledContentText>
+            </StyledItemInfo>
+          </StyledItemDown>
+        </StyledContent>
+
+        <StyledColumn>
+          <StyledColumnImage>
+            <StyledContentMedia alt="media_img2" src="images/media_img2.jpg" />
+          </StyledColumnImage>
+
+          <StyledColumnInfo>
+            <StyledColumnTitle>Phones</StyledColumnTitle>
+            <StyledColumnText>Your day to day life</StyledColumnText>
+          </StyledColumnInfo>
+        </StyledColumn>
+
+        <StyledColumn>
+          <StyledColumnInfo>
+            <StyledColumnTitle>Tablet</StyledColumnTitle>
+            <StyledColumnText>Empower your work</StyledColumnText>
+          </StyledColumnInfo>
+
+          <StyledColumnImage>
+            <StyledContentMedia alt="media_img3" src="images/media_img3.jpg" />
+          </StyledColumnImage>
+        </StyledColumn>
+      </StyledWrapper>
+    </StyledLayout>
+  );
+};
 
 export { Media };

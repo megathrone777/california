@@ -1,6 +1,6 @@
 import React from "react";
-import { HeaderSearchSvg, HeaderCartSvg } from "~/icons";
 
+import { HeaderSearchSvg, HeaderCartSvg } from "~/icons";
 import { StyledButton, StyledWrapper } from "./styled";
 
 const Buttons: React.FC = () => (
@@ -8,6 +8,7 @@ const Buttons: React.FC = () => (
     <StyledButton type="button">
       <HeaderSearchSvg />
     </StyledButton>
+
     <StyledButton type="button">
       <HeaderCartSvg />
     </StyledButton>

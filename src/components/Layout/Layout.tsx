@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Header, Slider, Media, Products, Around } from "~/components";
+import { Categories, Header, Slider, Media, Products } from "~/components";
 import { StyledWrapper } from "./styled";
 
 const Layout: React.FC = () => (
@@ -9,7 +9,7 @@ const Layout: React.FC = () => (
     <Slider />
     <Media />
     <Products />
-    <Around />
+    <Categories />
     Footer
   </StyledWrapper>
 );

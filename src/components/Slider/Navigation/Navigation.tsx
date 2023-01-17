@@ -12,6 +12,7 @@ const Navigation: React.FC = () => {
       <StyledArrow onClick={(): void => swiper.slidePrev()} type="button">
         <SliderArrowSvg />
       </StyledArrow>
+
       <StyledArrow onClick={(): void => swiper.slideNext()} type="button">
         <SliderArrowSvg />
       </StyledArrow>

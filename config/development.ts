@@ -1,42 +1,40 @@
-import { BuildOptions, PluginBuild } from "esbuild";
+import { BuildOptions } from "esbuild";
 import { createServer } from "esbuild-server";
+import { clean } from "esbuild-plugin-clean";
 import { cwd } from "process";
 import { resolve } from "path";
 
-import { sharedOptions } from "./sharedOptions";
+import { rebuildTime } from "./plugins";
+import { options } from "./options";
 
 const rootDir: string = cwd();
-const publicDir: string = resolve(rootDir, "./public");
+const publicDir: string = resolve(rootDir, "public");
 const buildOptions: BuildOptions = {
-  ...sharedOptions,
+  ...options,
+  metafile: true,
   outdir: `${publicDir}/js`,
   plugins: [
-    ...sharedOptions.plugins!,
-    {
-      name: "compiling",
-      setup(build: PluginBuild): void {
-        build.onStart((): void => {
-          console.time("Build time");
-          console.info("\x1b[32m%s\x1b[0m", "Compiling...");
-        });
-
-        build.onEnd((): void => {
-          console.timeEnd("Build time");
-          console.info("\x1b[32m%s\x1b[0m", "Compiled successfully!");
-        });
-      },
-    },
+    ...options.plugins!,
+    clean({
+      cleanOn: "start",
+      patterns: ["build", "public/js"],
+      sync: false,
+      verbose: false,
+    }),
+    rebuildTime,
   ],
-  sourcemap: "external",
+  sourcemap: "linked",
 };
 
-const server = createServer(buildOptions, {
-  historyApiFallback: true,
-  injectLiveReload: true,
-  open: true,
-  port: 1337,
-  static: publicDir,
-});
+(async (): Promise<void> => {
+  const result = await createServer(buildOptions, {
+    historyApiFallback: true,
+    open: true,
+    port: 1337,
+    static: publicDir,
+  }).start();
 
-server.start();
-console.info("Listening on: \x1b[32m%s\x1b[0m", server.url);
+  if (result && result.metafile) {
+    console.info("Modules count: ", Object.values(result.metafile.inputs).length);
+  }
+})();

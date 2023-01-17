@@ -1,30 +1,28 @@
 import { styled } from "~/theme";
 
-export const StyledWrapper = styled("div")(({ theme: { colors } }) => ({
-  backgroundColor: colors.greenLight,
-  display: "flex",
-  height: "100%",
-}));
-
-export const StyledContent = styled("div")(({ theme: { rem } }) => ({
-  alignItems: "flex-start",
-  display: "flex",
-  flex: "0 1 50%",
-  flexDirection: "column",
-  justifyContent: "center",
-  paddingLeft: rem(55),
-  width: "50%",
+export const StyledWrapper = styled("div")(({ theme: { colors, rem } }) => ({
+  backgroundColor: colors.grayLightest,
+  borderRadius: rem(15),
+  flex: "0 1 33.3333%",
+  maxWidth: "33.3333",
+  paddingTop: rem(35),
+  textAlign: "center",
 }));
 
 export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
   fontFamily: fonts.fontReadex,
-  fontSize: rem(58),
-  lineHeight: rem(70),
+  fontSize: rem(28),
+  lineHeight: rem(35),
   marginBottom: rem(30),
 }));
 
-export const StyledText = styled("p")(({ theme: { rem } }) => ({
-  lineHeight: rem(19),
+export const StyledSubtitle = styled("p")(({ theme: { fonts, rem } }) => ({
+  fontFamily: fonts.fontReadex,
+  fontSize: rem(13),
+  lineHeight: rem(17),
+}));
+
+export const StyledHelper = styled("div")(({ theme: { rem } }) => ({
   marginBottom: rem(30),
 }));
 
@@ -44,4 +42,9 @@ export const StyledButton = styled("button")(({ theme: { rem } }) => ({
     backgroundColor: "black",
     color: "white",
   },
+}));
+
+export const StyledMedia = styled("div")(({ theme: { rem } }) => ({
+  height: rem(250),
+  textAlign: "center",
 }));

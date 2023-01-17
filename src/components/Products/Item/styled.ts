@@ -1,47 +1,41 @@
 import { styled } from "~/theme";
 
-export const StyledWrapper = styled.div`
-    /* display: flex;
-    flex-direction: column;
-    justify-content: flex-end; */
-    width: 25%;
-    flex: 0 1 25%;
-`;
+export const StyledWrapper = styled("div")({
+  flex: "0 1 25%",
+  width: "25%",
+});
 
-export const StyledImage = styled.img``;
+export const StyledMedia = styled("div")(({ theme: { rem } }) => ({
+  height: rem(215),
+  marginBottom: rem(40),
+}));
 
-export const StyledMedia = styled.div`
-  ${({ theme: { rem } }): string => `
-    height: ${rem(215)};
-    margin-bottom: ${rem(40)};
-  `};
-`;
+export const StyledLink = styled("a")({
+  display: "block",
+  height: "100%",
+  textAlign: "center",
+});
 
-export const StyledName = styled.p`
-  ${({ theme: { rem, fonts } }): string => `
-    font-family: ${fonts.fontReadex};
-    font-size: ${rem(22)};
-    line-height: ${rem(28)};
-    white-space: nowrap;
-    margin-bottom: ${rem(10)};
-  `};
-`;
+export const StyledImage = styled("img")({
+  maxHeight: "100%",
+});
 
-export const StyledDescription = styled.p`
-  ${({ theme: { rem } }): string => `
-    font-size: ${rem(14)};
-    line-height: ${rem(17)};
-    min-height: ${rem(50)};
-    width: ${rem(260)};
-    margin-bottom: ${rem(25)};
-  `};
-`;
+export const StyledName = styled("div")(({ theme: { fonts, rem } }) => ({
+  fontFamily: fonts.fontReadex,
+  fontSize: rem(22),
+  lineHeight: rem(28),
+  marginBottom: rem(12),
+  whiteSpace: "nowrap",
+}));
 
-export const StyledPrice = styled.p`
-  ${({ theme: { rem } }): string => `
-    font-size: ${rem(18)};
-    line-height: ${rem(22)};
-  `};
-`;
+export const StyledDescription = styled("div")(({ theme: { rem } }) => ({
+  fontSize: rem(14),
+  lineHeight: rem(17),
+  margingBottom: rem(25),
+  minHeight: rem(75),
+}));
 
-
+export const StyledPrice = styled("p")(({ theme: { rem } }) => ({
+  fontSize: rem(18),
+  lineHeight: rem(22),
+}));

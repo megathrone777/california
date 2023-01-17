@@ -4,64 +4,50 @@ import { copy } from "esbuild-plugin-copy";
 import { cwd } from "process";
 import { resolve } from "path";
 
-import { sharedOptions } from "./sharedOptions";
+import { options } from "./options";
 
 const rootDir: string = cwd();
-const buildDir: string = resolve(rootDir, "./build");
-const publicDir: string = resolve(rootDir, "./public");
+const buildDir: string = resolve(rootDir, "build");
 const productionOptions: BuildOptions = {
-  ...sharedOptions,
-  chunkNames: "[name]-[hash]",
+  ...options,
+  legalComments: "none",
   drop: ["console"],
-  format: "esm",
   minify: true,
   outdir: `${buildDir}/js`,
   plugins: [
-    ...sharedOptions.plugins!,
+    ...options.plugins!,
     clean({
       cleanOn: "start",
-      patterns: ["./build/*", "./public/js"],
+      patterns: ["build", "public/js"],
       sync: false,
       verbose: false,
     }),
     copy({
-      resolveFrom: publicDir,
       assets: [
         {
-          from: "./public/*.html",
-          to: `${buildDir}/`,
-        },
-        {
-          from: "./public/images/**/*",
-          to: `${buildDir}/images`,
-        },
-        {
-          from: "./public/fonts/**/*",
-          to: `${buildDir}/fonts`,
-        },
-        {
-          from: "./public/data/**/*",
-          to: `${buildDir}/data`,
+          from: "./public/**/*",
+          to: buildDir,
         },
       ],
     }),
   ],
-  sourcemap: false,
-  splitting: true,
-  watch: false,
 };
 
-console.info("\x1b[32m%s\x1b[0m", "Compiling...");
-build(productionOptions)
-  .then((result: BuildResult): void => {
-    if (result && !!result.errors.length) {
-      console.error(result.errors);
+(async (): Promise<void> => {
+  console.info("\x1b[32m%s\x1b[0m", "Compiling...");
+  await build(productionOptions)
+    .then((result: BuildResult): void => {
+      if (result && !!result.errors.length) {
+        console.error(result.errors);
 
-      return;
-    }
+        return;
+      }
 
-    process.exit(0);
-  })
-  .catch((): void => {
-    process.exit(1);
-  });
+      console.info("\x1b[32m%s\x1b[0m", "Compiled successfully!");
+      process.exit(0);
+    })
+    .catch((): void => {
+      console.error("Build failed!");
+      process.exit(1);
+    });
+})();

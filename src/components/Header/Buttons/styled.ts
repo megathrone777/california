@@ -1,19 +1,15 @@
 import { styled } from "~/theme";
 
-export const StyledWrapper = styled.div`
-  ${({ theme: { rem } }): string => `
-    display: flex;
-    gap: ${rem(20)};
-  `};
-`;
+export const StyledWrapper = styled("div")(({ theme: { rem } }) => ({
+  display: "flex",
+  gap: rem(20),
+}));
 
-export const StyledButton = styled.button`
-  ${({ theme: { rem } }): string => `
-    width: ${rem(24)};
-    color: black;
+export const StyledButton = styled("button")(({ theme: { rem } }) => ({
+  color: "black",
+  width: rem(24),
 
-    &:hover {
-      opacity: 0.7;
-    }
-  `};
-`;
+  ":hover": {
+    opacity: 0.7,
+  },
+}));

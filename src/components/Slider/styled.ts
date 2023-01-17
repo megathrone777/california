@@ -1,39 +1,34 @@
-import { styled } from "~/theme";
-
 import { Swiper } from "swiper/react";
 
-export const StyledWrapper = styled(Swiper)`
-  ${({ theme: { colors, rem } }): string => `
-    background-color: ${colors.greenLight};
-    border-radius: ${rem(30)};
-    overflow: hidden;
-    height: ${rem(550)};
-    margin-bottom: ${rem(75)};
+import { styled } from "~/theme";
 
-    & .swiper-pagination {
-      display: flex;
-      justify-content: center;
-      gap: ${rem(35)};
-      position: absolute;
-      bottom: ${rem(35)};
-      left: 0;
-      right: 0;
-      width: 100%;
-      z-index: 2;
-    }
+export const StyledWrapper = styled(Swiper)(({ theme: { rem } }) => ({
+  borderRadius: rem(30),
+  height: rem(550),
+  marginBottom: rem(75),
+  overflow: "hidden",
 
-    & .swiper-pagination-bullet {
-      width: ${rem(190)};
-      height: ${rem(3)};
-      display: block;
-      background-color: black;
-      cursor: pointer;
+  "& > div.swiper-pagination": {
+    bottom: rem(35),
+    display: "flex",
+    gap: rem(35),
+    justifyContent: "center",
+    left: 0,
+    position: "absolute",
+    right: 0,
+    width: "100%",
+    zIndex: 2,
 
-      &-active {
-        background-color: tomato;
-      }
-    }
-  `};
-`;
+    "& > span.swiper-pagination-bullet": {
+      backgroundColor: "black",
+      cursor: "pointer",
+      display: "block",
+      height: rem(3),
+      width: rem(100),
 
-
+      "&-active": {
+        backgroundColor: "tomato",
+      },
+    },
+  },
+}));

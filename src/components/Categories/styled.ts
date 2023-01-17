@@ -2,7 +2,7 @@ import { styled } from "~/theme";
 
 export const StyledWrapper = styled("div")(({ theme: { rem } }) => ({
   marginBottom: rem(75),
-  minHeight: rem(485),
+  minHeight: rem(550),
   position: "relative",
 }));
 
@@ -26,5 +26,6 @@ export const StyledText = styled("p")(({ theme: { fonts, rem } }) => ({
 
 export const StyledList = styled("div")(({ theme: { rem } }) => ({
   display: "flex",
-  gap: rem(30),
+  justifyContent: "space-between",
+  gap: rem(28),
 }));

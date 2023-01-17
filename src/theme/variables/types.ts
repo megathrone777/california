@@ -1,4 +1,5 @@
 export interface TColors {
+  grayLightest: string;
   greenLight: string;
 }
 
