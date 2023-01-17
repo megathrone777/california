@@ -9,7 +9,6 @@ import {
   Ideas,
   Search,
   Thing,
-  Footer
 } from "~/components";
 import { StyledWrapper } from "./styled";
 
@@ -23,7 +22,6 @@ const Layout: React.FC = () => (
     <Ideas />
     <Search />
     <Thing />
-    <Footer />
   </StyledWrapper>
 );
 

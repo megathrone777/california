@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 
 import { TProps } from "./types";
 import { StyledButton, StyledItem, StyledList, StyledWrapper } from "./styled";
@@ -20,11 +20,12 @@ const Hints: React.FC<TProps> = ({ onSelect }) => {
       });
   };
 
-  const handleButtonClick = (
-    event: React.SyntheticEvent<HTMLButtonElement>
-  ): void => {
-    onSelect(event.currentTarget.textContent);
-  };
+  const handleButtonClick = useCallback(
+    (event: React.SyntheticEvent<HTMLButtonElement>): void => {
+      onSelect(event.currentTarget.textContent);
+    },
+    []
+  );
 
   useEffect((): void => {
     getHints();
