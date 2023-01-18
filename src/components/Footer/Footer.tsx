@@ -22,6 +22,7 @@ import {
   StyledCopyrightContentLeft,
   StyledCopyrightContentRight,
   StyledCopyrightContentMedia,
+  StyledCopyrightContentMediaLink,
 } from "./styled";
 
 const Footer: React.FC = () => {
@@ -96,17 +97,19 @@ const Footer: React.FC = () => {
           <StyledCopyrightContent>
             <StyledCopyrightContentLeft>
               Made By:<p>Azwedo</p>
-              <StyledCopyrightContentMedia>
-                <img
-                  src="images/copyright_arrow_img.png"
-                  alt="copyright_arrow_img"
-                />
+              <StyledCopyrightContentMedia type="button">
+                <StyledCopyrightContentMediaLink href="#">
+                  <img
+                    src="images/copyright_arrow_img.png"
+                    alt="copyright_arrow_img"
+                  />
+                </StyledCopyrightContentMediaLink>
               </StyledCopyrightContentMedia>
             </StyledCopyrightContentLeft>
 
             <StyledCopyrightContentRight>
               Powered by:<p>Webflow</p>
-              <StyledCopyrightContentMedia>
+              <StyledCopyrightContentMedia type="button">
                 <img
                   src="images/copyright_arrow_img.png"
                   alt="copyright_arrow_img"
