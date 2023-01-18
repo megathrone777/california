@@ -27,6 +27,7 @@ export const StyledInput = styled("input")(({ theme: { rem } }) => ({
   paddingLeft: rem(30),
   marginBottom: rem(75),
   borderRadius: "55px 0 0 55px",
+  border: `${rem(1)} solid black`,
 
 }));
 

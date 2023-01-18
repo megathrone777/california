@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { v4 } from "uuid";
+// import { v4 } from "uuid";
 
 import { TFooterItem } from "./types";
 import {
@@ -17,6 +17,11 @@ import {
   StyledContentMenuInnerItem,
   StyledContentMenuInnerLink,
   StyledContentMenuInnerList,
+  StyledCopyrightMedia,
+  StyledCopyrightContent,
+  StyledCopyrightContentLeft,
+  StyledCopyrightContentRight,
+  StyledCopyrightContentMedia,
 } from "./styled";
 
 const Footer: React.FC = () => {
@@ -59,15 +64,15 @@ const Footer: React.FC = () => {
           {footerItems && !!footerItems.length && (
             <StyledContentMenu>
               {footerItems.map(
-                ({ items, title }: TFooterItem): React.ReactElement => (
-                  <StyledContentMenuColumn key={v4()}>
+                ({ id, items, title }: TFooterItem): React.ReactElement => (
+                  <StyledContentMenuColumn key={id}>
                     <StyledContentMenuTitle>{title}</StyledContentMenuTitle>
 
                     <StyledContentMenuInner>
                       <StyledContentMenuInnerList>
                         {items.map(
                           ({ title: menuTitle }): React.ReactElement => (
-                            <StyledContentMenuInnerItem key={v4()}>
+                            <StyledContentMenuInnerItem key={id}>
                               <StyledContentMenuInnerLink href="#">
                                 {menuTitle}
                               </StyledContentMenuInnerLink>
@@ -83,7 +88,33 @@ const Footer: React.FC = () => {
           )}
         </StyledContent>
 
-        <StyledCopyright>Copyright</StyledCopyright>
+        <StyledCopyright>
+          <StyledCopyrightMedia>
+            <img src="images/divider_footer_img.png" alt="footer_divider_img" />
+          </StyledCopyrightMedia>
+
+          <StyledCopyrightContent>
+            <StyledCopyrightContentLeft>
+              Made By:<p>Azwedo</p>
+              <StyledCopyrightContentMedia>
+                <img
+                  src="images/copyright_arrow_img.png"
+                  alt="copyright_arrow_img"
+                />
+              </StyledCopyrightContentMedia>
+            </StyledCopyrightContentLeft>
+
+            <StyledCopyrightContentRight>
+              Powered by:<p>Webflow</p>
+              <StyledCopyrightContentMedia>
+                <img
+                  src="images/copyright_arrow_img.png"
+                  alt="copyright_arrow_img"
+                />
+              </StyledCopyrightContentMedia>
+            </StyledCopyrightContentRight>
+          </StyledCopyrightContent>
+        </StyledCopyright>
       </StyledLayout>
     </StyledWrapper>
   );

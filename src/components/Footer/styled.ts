@@ -15,19 +15,18 @@ export const StyledContent = styled("div")(({ theme: { rem } }) => ({
   paddingBlock: rem(45),
 }));
 
-export const StyledCopyright = styled("div")({});
-
 export const StyledContentLogo = styled("div")(({ theme: { rem } }) => ({
   maxWidth: rem(370),
-  paddingLeft: rem(70),
+  padding: `0 ${rem(40)} 0 ${rem(25)}`,
 }));
 
-export const StyledContentMenu = styled("div")({
+export const StyledContentMenu = styled("div")(({ theme: { rem } }) => ({
   display: "flex",
   flex: "0 1 100%",
   justifyContent: "space-around",
   width: "100%",
-});
+  paddingRight: rem(75),
+}));
 
 export const StyledContentLogoMedia = styled("div")(({ theme: { rem } }) => ({
   marginBottom: rem(20),
@@ -59,3 +58,46 @@ export const StyledContentMenuInnerLink = styled("a")({
   textDecoration: "none",
   color: "black",
 });
+
+export const StyledCopyright = styled("div")({});
+
+export const StyledCopyrightMedia = styled("div")({});
+
+export const StyledCopyrightContent = styled("div")(({ theme: { rem } }) => ({
+  marginTop: rem(50),
+  display: "flex",
+  justifyContent: "space-between",
+  paddingInline: rem(30),
+}));
+
+export const StyledCopyrightContentLeft = styled("div")(
+  ({ theme: { fonts, rem } }) => ({
+    display: "flex",
+    fontFamily: fonts.fontReadex,
+    fontSize: rem(18),
+    lineHeight: rem(22),
+
+    "p": {
+      fontFamily: fonts.fontInter,
+      marginLeft: "5px",
+    }
+  })
+);
+
+export const StyledCopyrightContentMedia = styled("div")(({ theme: { rem } }) => ({
+  marginLeft: rem(7),
+}));
+
+export const StyledCopyrightContentRight = styled("div")(
+  ({ theme: { fonts, rem } }) => ({
+    display: "flex",
+    fontFamily: fonts.fontReadex,
+    fontSize: rem(18),
+    lineHeight: rem(22),
+
+    "p": {
+      fontFamily: fonts.fontInter,
+      marginLeft: "5px",
+    }
+  })
+);

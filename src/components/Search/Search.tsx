@@ -29,7 +29,7 @@ const Search: React.FC = () => {
 
   return (
     <StyledWrapper>
-      <StyledTitle>Ideas have a place here</StyledTitle>
+      <StyledTitle>Looking for anything else?</StyledTitle>
 
       <StyledForm>
         <StyledInput
