@@ -36,8 +36,8 @@ const Hints: React.FC<TProps> = ({ onSelect }) => {
       {hints && !!hints.length && (
         <StyledList>
           {hints.map(
-            (hint: string): React.ReactElement => (
-              <StyledItem>
+            (hint: string, index: number): React.ReactElement => (
+              <StyledItem key={`${hint}-${index}`}>
                 <StyledButton type="button" onClick={handleButtonClick}>
                   {hint}
                 </StyledButton>

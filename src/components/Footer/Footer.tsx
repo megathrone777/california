@@ -3,25 +3,21 @@ import React, { useEffect, useState } from "react";
 import { TFooterItem } from "./types";
 import {
   StyledWrapper,
-  StyledContent,
-  StyledCopyright,
-  StyledContentLogo,
   StyledLayout,
+  StyledContent,
+  StyledLogo,
+  StyledLogoMedia,
+  StyledLogoText,
+  StyledContentLayout,
+  StyledContentColumn,
+  StyledContentTitle,
   StyledContentMenu,
-  StyledContentLogoMedia,
-  StyledContentLogoText,
-  StyledContentMenuColumn,
-  StyledContentMenuTitle,
-  StyledContentMenuInner,
-  StyledContentMenuInnerItem,
-  StyledContentMenuInnerLink,
-  StyledContentMenuInnerList,
-  StyledCopyrightMedia,
+  StyledContentMenuList,
+  StyledContentMenuItem,
+  StyledContentMenuLink,
   StyledCopyrightContent,
-  StyledCopyrightContentLeft,
-  StyledCopyrightContentRight,
-  StyledCopyrightContentMedia,
-  StyledCopyrightContentMediaLink,
+  StyledCopyrightColumn,
+  StyledCopyrightButton,
 } from "./styled";
 
 const Footer: React.FC = () => {
@@ -49,73 +45,76 @@ const Footer: React.FC = () => {
     <StyledWrapper>
       <StyledLayout>
         <StyledContent>
-          <StyledContentLogo>
-            <StyledContentLogoMedia>
-              <img src="images/header_logo.png" alt="footer_logo" />
-            </StyledContentLogoMedia>
+          <StyledLogo>
+            <StyledLogoMedia>
+              <img src="images/header_logo.png" alt="Footer logo." />
+            </StyledLogoMedia>
 
-            <StyledContentLogoText>
+            <StyledLogoText>
               Sign up for texts to be notified about our best offers on the perfect
               gifts.
-            </StyledContentLogoText>
-          </StyledContentLogo>
+            </StyledLogoText>
+          </StyledLogo>
 
           {footerItems && !!footerItems.length && (
-            <StyledContentMenu>
+            <StyledContentLayout>
               {footerItems.map(
                 ({ id, items, title }: TFooterItem): React.ReactElement => (
-                  <StyledContentMenuColumn key={id}>
-                    <StyledContentMenuTitle>{title}</StyledContentMenuTitle>
+                  <StyledContentColumn key={id}>
+                    <StyledContentTitle>{title}</StyledContentTitle>
 
-                    <StyledContentMenuInner>
-                      <StyledContentMenuInnerList>
+                    <StyledContentMenu>
+                      <StyledContentMenuList>
                         {items.map(
-                          ({ title: menuTitle }): React.ReactElement => (
-                            <StyledContentMenuInnerItem key={`${id}-menu-item`}>
-                              <StyledContentMenuInnerLink href="#">
+                          (
+                            { title: menuTitle },
+                            index: number
+                          ): React.ReactElement => (
+                            <StyledContentMenuItem key={`${id}-menu-item-${index}`}>
+                              <StyledContentMenuLink href="#">
                                 {menuTitle}
-                              </StyledContentMenuInnerLink>
-                            </StyledContentMenuInnerItem>
+                              </StyledContentMenuLink>
+                            </StyledContentMenuItem>
                           )
                         )}
-                      </StyledContentMenuInnerList>
-                    </StyledContentMenuInner>
-                  </StyledContentMenuColumn>
+                      </StyledContentMenuList>
+                    </StyledContentMenu>
+                  </StyledContentColumn>
                 )
               )}
-            </StyledContentMenu>
+            </StyledContentLayout>
           )}
         </StyledContent>
 
-        <StyledCopyright>
-          <StyledCopyrightMedia>
-            <img src="images/divider_footer_img.png" alt="footer_divider_img" />
-          </StyledCopyrightMedia>
+        <div>
+          <div>
+            <img src="images/divider_footer_img.png" alt="Footer menu." />
+          </div>
 
           <StyledCopyrightContent>
-            <StyledCopyrightContentLeft>
+            <StyledCopyrightColumn>
               Made By:<p>Azwedo</p>
-              <StyledCopyrightContentMedia type="button">
-                <StyledCopyrightContentMediaLink href="#">
+              <StyledCopyrightButton type="button">
+                <a href="#">
                   <img
-                    src="images/copyright_arrow_img.png"
                     alt="copyright_arrow_img"
+                    src="images/copyright_arrow_img.png"
                   />
-                </StyledCopyrightContentMediaLink>
-              </StyledCopyrightContentMedia>
-            </StyledCopyrightContentLeft>
+                </a>
+              </StyledCopyrightButton>
+            </StyledCopyrightColumn>
 
-            <StyledCopyrightContentRight>
+            <StyledCopyrightColumn>
               Powered by:<p>Webflow</p>
-              <StyledCopyrightContentMedia type="button">
+              <StyledCopyrightButton type="button">
                 <img
                   src="images/copyright_arrow_img.png"
                   alt="copyright_arrow_img"
                 />
-              </StyledCopyrightContentMedia>
-            </StyledCopyrightContentRight>
+              </StyledCopyrightButton>
+            </StyledCopyrightColumn>
           </StyledCopyrightContent>
-        </StyledCopyright>
+        </div>
       </StyledLayout>
     </StyledWrapper>
   );
