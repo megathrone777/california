@@ -20,6 +20,7 @@ const Thing: React.FC = () => (
     <StyledMedia>
       <img src="images/thing_img.png" alt="thing_img" />
     </StyledMedia>
+
     <StyledForm>
       <StyledInput type="text" placeholder="Email" />
       <StyledButton type="submit">Sign Up</StyledButton>

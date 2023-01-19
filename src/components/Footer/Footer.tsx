@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { v4 } from "uuid";
 
 import { TFooterItem } from "./types";
 import {
@@ -42,8 +41,6 @@ const Footer: React.FC = () => {
       });
   };
 
-  console.log(footerItems);
-
   useEffect((): void => {
     getFooterItems();
   }, []);
@@ -56,6 +53,7 @@ const Footer: React.FC = () => {
             <StyledContentLogoMedia>
               <img src="images/header_logo.png" alt="footer_logo" />
             </StyledContentLogoMedia>
+
             <StyledContentLogoText>
               Sign up for texts to be notified about our best offers on the perfect
               gifts.
@@ -73,7 +71,7 @@ const Footer: React.FC = () => {
                       <StyledContentMenuInnerList>
                         {items.map(
                           ({ title: menuTitle }): React.ReactElement => (
-                            <StyledContentMenuInnerItem key={id}>
+                            <StyledContentMenuInnerItem key={`${id}-menu-item`}>
                               <StyledContentMenuInnerLink href="#">
                                 {menuTitle}
                               </StyledContentMenuInnerLink>

@@ -77,16 +77,18 @@ export const StyledCopyrightContentLeft = styled("div")(
     fontSize: rem(18),
     lineHeight: rem(22),
 
-    "p": {
+    p: {
       fontFamily: fonts.fontInter,
-      marginLeft: "5px",
-    }
+      marginLeft: rem(5),
+    },
   })
 );
 
-export const StyledCopyrightContentMedia = styled("button")(({ theme: { rem } }) => ({
-  marginLeft: rem(7),
-}));
+export const StyledCopyrightContentMedia = styled("button")(
+  ({ theme: { rem } }) => ({
+    marginLeft: rem(7),
+  })
+);
 
 export const StyledCopyrightContentMediaLink = styled("a")({});
 
@@ -97,9 +99,9 @@ export const StyledCopyrightContentRight = styled("div")(
     fontSize: rem(18),
     lineHeight: rem(22),
 
-    "p": {
+    p: {
       fontFamily: fonts.fontInter,
-      marginLeft: "5px",
-    }
+      marginLeft: rem(5),
+    },
   })
 );

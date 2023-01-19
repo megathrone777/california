@@ -35,6 +35,10 @@ const base = css`
     cursor: pointer;
     background-color: transparent;
   }
+
+  input:focus {
+    outline: none;
+  }
 `;
 
 export { base };

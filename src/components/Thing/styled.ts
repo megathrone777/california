@@ -1,13 +1,10 @@
 import { styled } from "~/theme";
-import { colors } from "~/theme/variables";
 
-export const StyledWrapper = styled("div")(({ theme: { rem } }) => ({
+export const StyledWrapper = styled("div")(({ theme: { colors, rem } }) => ({
   maxWidth: rem(935),
   borderRadius: rem(16),
-  marginInline: "auto",
-  marginBottom: rem(75),
+  margin: `0 auto ${rem(75)}`,
   backgroundColor: colors.greenLight,
-
 }));
 
 export const StyledMedia = styled("div")(({ theme: { rem } }) => ({
@@ -26,27 +23,25 @@ export const StyledInput = styled("input")(({ theme: { rem } }) => ({
   backgroundColor: "transparent",
   paddingLeft: rem(30),
   marginBottom: rem(75),
-  borderRadius: "55px 0 0 55px",
+  borderRadius: `${rem(55)} 0 0 ${rem(55)}`,
   border: `${rem(1)} solid black`,
-
 }));
 
 export const StyledButton = styled("button")(({ theme: { rem } }) => ({
+  backgroundColor: "black",
+  borderRadius: `0 ${rem(55)} ${rem(55)} 0`,
   color: "white",
   fontSize: rem(14),
-  lineHeight: rem(17),
-  backgroundColor: "black",
   height: rem(50),
-  width: rem(110),
-  borderRadius: "0 55px 55px 0",
-  overflow: "hidden",
+  lineHeight: rem(17),
   marginBottom: rem(75),
-  // border: "1px solid black",
+  overflow: "hidden",
+  verticalAlign: "top",
+  width: rem(110),
 
   ":hover": {
-  opacity: 0.5,
-  }
-
+    opacity: 0.5,
+  },
 }));
 
 export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
@@ -56,11 +51,10 @@ export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
   fontSize: rem(42),
   lineHeight: rem(52),
   marginBottom: rem(10),
-  // marginTop: rem(45),
   textAlign: "center",
 }));
 
-export const StyledText = styled("p")(({ theme: {  rem } }) => ({
+export const StyledText = styled("p")(({ theme: { rem } }) => ({
   color: "black",
   fontSize: rem(16),
   lineHeight: rem(19),

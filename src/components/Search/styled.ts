@@ -24,14 +24,18 @@ export const StyledInput = styled("input")(({ theme: { colors, rem } }) => ({
   height: "100%",
   fontSize: rem(14),
   borderRadius: rem(100),
-  border: `${rem((1))} solid ${colors.grayLighter}`,
+  border: `${rem(1)} solid ${colors.grayLighter}`,
   backgroundColor: colors.grayLightest,
   paddingInline: rem(65),
+
+  ":focus": {
+    borderColor: "black",
+  },
 }));
 
 export const StyledButton = styled("button")(({ theme: { rem } }) => ({
   position: "absolute",
-  top: "calc(50% - 15px)",
+  top: `calc(50% - ${rem(15)})`,
   left: rem(20),
   width: rem(30),
 }));

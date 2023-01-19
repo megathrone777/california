@@ -33,7 +33,7 @@ const Slider: React.FC = () => {
   return (
     <StyledWrapper
       loop
-      modules={[Navigation, Pagination, Scrollbar]}
+      modules={[Pagination, Scrollbar]}
       pagination={{ clickable: true }}
       slidesPerView={1}
       spaceBetween={50}
@@ -48,6 +48,7 @@ const Slider: React.FC = () => {
           )
         )}
 
+      <Navigation />
       {slidesLoading && <Loader />}
     </StyledWrapper>
   );
