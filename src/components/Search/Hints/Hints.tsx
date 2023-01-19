@@ -23,10 +23,6 @@ const Hints: React.FC<TProps> = ({ onSelect }) => {
       });
   };
 
-  const checkActiveHint = (hint: string): boolean => {
-    return selectedHints.includes(hint);
-  };
-
   const handleButtonClick = useCallback(
     (event: React.SyntheticEvent<HTMLButtonElement>): void => {
       const { value } = event.currentTarget;
@@ -56,7 +52,7 @@ const Hints: React.FC<TProps> = ({ onSelect }) => {
             (hint: string, index: number): React.ReactElement => (
               <li key={`${hint}-${index}`}>
                 <StyledButton
-                  isActive={checkActiveHint(hint)}
+                  isActive={selectedHints.includes(hint)}
                   type="button"
                   onClick={handleButtonClick}
                   value={hint}
