@@ -21,10 +21,8 @@ const Search: React.FC = () => {
 
   const handleHintSelect = (hint: string | null): void => {
     if (hint) {
-      setInputValue((prevState) => `${prevState} ${hint}`);
+      setInputValue((prevState: string): string => `${prevState} ${hint}`);
     }
-
-    // setInputValue("");
   };
 
   return (
