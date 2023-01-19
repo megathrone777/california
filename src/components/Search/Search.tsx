@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 import { SearchSvg } from "~/icons";
-
 import { Hints } from "./Hints";
-
 import {
   StyledWrapper,
   StyledTitle,
@@ -19,10 +17,10 @@ const Search: React.FC = () => {
     setInputValue(event.currentTarget.value);
   };
 
-  const handleHintSelect = (hint: string | null): void => {
-    if (hint) {
-      setInputValue((prevState: string): string => `${prevState} ${hint}`);
-    }
+  const handleHintSelect = (hints: string[]): void => {
+    const hintsValue = hints.join(" ");
+
+    setInputValue(hintsValue);
   };
 
   return (

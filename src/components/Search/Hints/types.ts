@@ -1,3 +1,3 @@
 export interface TProps {
-  onSelect: (hint: string | null) => void;
+  onSelect: (hints: string[]) => void;
 }
