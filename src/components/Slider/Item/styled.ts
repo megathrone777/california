@@ -16,11 +16,16 @@ export const StyledContent = styled("div")(({ theme: { rem } }) => ({
   width: "50%",
 }));
 
-export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
+export const StyledTitle = styled("h2")(({ theme: { devices, fonts, rem } }) => ({
   fontFamily: fonts.fontReadex,
   fontSize: rem(58),
   lineHeight: rem(70),
   marginBottom: rem(30),
+
+  [devices["desktop"]]: {
+    fontSize: rem(46),
+    lineHeight: rem(50),
+  },
 }));
 
 export const StyledText = styled("p")(({ theme: { rem } }) => ({

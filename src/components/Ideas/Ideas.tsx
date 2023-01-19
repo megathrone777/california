@@ -1,25 +1,18 @@
 import React from "react";
 
-import {
-  StyledWrapper,
-  StyledText,
-  StyledTitle,
-  StyledLayout,
-  StyledMedia,
-  StyledContent,
-} from "./styled";
+import { StyledText, StyledTitle, StyledLayout, StyledContent } from "./styled";
 
 const Ideas: React.FC = () => (
-  <StyledWrapper>
+  <div>
     <StyledTitle>Ideas have a place here</StyledTitle>
     <StyledText>
       Our new Limited Edition Winter Design BESPOKE 4-Door Flex™
     </StyledText>
 
     <StyledLayout>
-      <StyledMedia>
+      <div>
         <img src="images/ideas_img.jpg" alt="ideas_img" />
-      </StyledMedia>
+      </div>
 
       <StyledContent>
         <p>We Make It Easy To Find The Great Design Talent, Easier...</p>
@@ -28,7 +21,7 @@ const Ideas: React.FC = () => (
         <p>We Make It Easy To Find The Great Design Talent, Easier...</p>
       </StyledContent>
     </StyledLayout>
-  </StyledWrapper>
+  </div>
 );
 
 export { Ideas };

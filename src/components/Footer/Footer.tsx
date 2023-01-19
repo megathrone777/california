@@ -9,12 +9,12 @@ import {
   StyledLogoMedia,
   StyledLogoText,
   StyledContentLayout,
-  StyledContentColumn,
   StyledContentTitle,
   StyledContentMenu,
   StyledContentMenuList,
   StyledContentMenuItem,
   StyledContentMenuLink,
+  StyledCopyright,
   StyledCopyrightContent,
   StyledCopyrightColumn,
   StyledCopyrightButton,
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
             <StyledContentLayout>
               {footerItems.map(
                 ({ id, items, title }: TFooterItem): React.ReactElement => (
-                  <StyledContentColumn key={id}>
+                  <div key={id}>
                     <StyledContentTitle>{title}</StyledContentTitle>
 
                     <StyledContentMenu>
@@ -79,14 +79,14 @@ const Footer: React.FC = () => {
                         )}
                       </StyledContentMenuList>
                     </StyledContentMenu>
-                  </StyledContentColumn>
+                  </div>
                 )
               )}
             </StyledContentLayout>
           )}
         </StyledContent>
 
-        <div>
+        <StyledCopyright>
           <div>
             <img src="images/divider_footer_img.png" alt="Footer menu." />
           </div>
@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
               </StyledCopyrightButton>
             </StyledCopyrightColumn>
           </StyledCopyrightContent>
-        </div>
+        </StyledCopyright>
       </StyledLayout>
     </StyledWrapper>
   );

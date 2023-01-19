@@ -17,14 +17,24 @@ const shadowStyles = css(({ theme: { rem } }) => ({
   },
 }));
 
-export const StyledWrapper = styled("div")(({ theme: { rem } }) => ({
+export const StyledWrapper = styled("div")(({ theme: { devices, rem } }) => ({
   display: "flex",
   height: rem(800),
   justifyContent: "space-between",
+  columnGap: rem(20),
+
+  [devices["desktop"]]: {
+    columnGap: rem(10),
+    height: rem(550),
+  },
 }));
 
-export const StyledLayout = styled("div")(({ theme: { rem } }) => ({
+export const StyledLayout = styled("div")(({ theme: { devices, rem } }) => ({
   marginBottom: rem(80),
+
+  [devices["desktop"]]: {
+    marginBottom: rem(50),
+  },
 }));
 
 export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
@@ -36,7 +46,7 @@ export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
   textAlign: "center",
 }));
 
-export const StyledText = styled("p")(({ theme: { fonts, rem } }) => ({
+export const StyledText = styled("p")(({ theme: { devices, fonts, rem } }) => ({
   color: "black",
   fontFamily: fonts.fontReadex,
   fontSize: rem(14),
@@ -44,31 +54,43 @@ export const StyledText = styled("p")(({ theme: { fonts, rem } }) => ({
   margin: `0 auto ${rem(55)}`,
   maxWidth: rem(630),
   textAlign: "center",
+
+  [devices["desktop"]]: {
+    marginBottom: rem(35),
+  },
 }));
 
-export const StyledContent = styled("div")(({ theme: { rem } }) => ({
+export const StyledContent = styled("div")(({ theme: { devices, rem } }) => ({
   display: "flex",
   flexBasis: rem(640),
   flexDirection: "column",
-  gap: rem(70),
+  rowGap: rem(20),
   justifyContent: "space-between",
+  maxWidth: rem(640),
+
+  [devices["desktop"]]: {
+    rowGap: rem(10),
+  },
 }));
 
 export const StyledColumn = styled("div")(
   ({ theme: { rem } }) => ({
-    alignItems: "center",
+    alignItems: "stretch",
     display: "flex",
     flexDirection: "column",
-    gap: rem(40),
+    flexBasis: rem(310),
+    rowGap: rem(40),
     justifyContent: "center",
     maxWidth: rem(310),
     position: "relative",
+    textAlign: "center",
   }),
   shadowStyles
 );
 
 export const StyledItem = styled("div")(
   ({ theme: { rem } }) => ({
+    flexBasis: rem(325),
     paddingLeft: rem(40),
     position: "relative",
   }),
@@ -79,7 +101,7 @@ export const StyledItemDown = styled("div")<{ isVisible: boolean }>(
   ({ isVisible, theme: { rem } }) => ({
     alignItems: "center",
     display: "flex",
-    height: "100%",
+    flexGrow: 1,
     paddingLeft: rem(40),
     position: "relative",
     transform: `translateY(${isVisible ? 0 : rem(30)})`,
@@ -108,31 +130,47 @@ export const StyledContentTitle = styled("h2")(({ theme: { rem } }) => ({
   lineHeight: rem(19),
 }));
 
-export const StyledContentText = styled("p")(({ theme: { rem } }) => ({
+export const StyledContentText = styled("p")(({ theme: { devices, rem } }) => ({
   fontSize: rem(32),
   lineHeight: rem(38),
+
+  [devices["desktop"]]: {
+    fontSize: rem(22),
+    lineHeight: rem(26),
+  },
 }));
 
-export const StyledColumnText = styled("p")(({ theme: { fonts, rem } }) => ({
-  color: "black",
-  fontFamily: fonts.fontReadex,
-  fontSize: rem(32),
-  lineHeight: rem(32),
-  textAlign: "center",
-}));
+export const StyledColumnText = styled("p")(
+  ({ theme: { devices, fonts, rem } }) => ({
+    color: "black",
+    fontFamily: fonts.fontReadex,
+    fontSize: rem(32),
+    lineHeight: rem(38),
+    textAlign: "center",
+
+    [devices["desktop"]]: {
+      fontSize: rem(22),
+      lineHeight: rem(28),
+    },
+  })
+);
 
 export const StyledContentMedia = styled("img")({
   height: "100%",
 });
 
-export const StyledColumnImage = styled("div")(({ theme: { rem } }) => ({
-  paddingLeft: rem(15),
-}));
+export const StyledColumnImage = styled("div")({
+  textAlign: "right",
+});
 
-export const StyledItemImage = styled("div")(({ theme: { rem } }) => ({
+export const StyledItemImage = styled("div")(({ theme: { devices, rem } }) => ({
   height: rem(377),
   textAlign: "center",
   width: "100%",
+
+  [devices["desktop"]]: {
+    height: rem(250),
+  },
 }));
 
 export const StyledItemDownImage = styled("div")({
@@ -144,5 +182,6 @@ export const StyledColumnInfo = styled("div")(({ theme: { rem } }) => ({
   alignItems: "center",
   display: "flex",
   flexDirection: "column",
-  width: rem(250),
+  marginInline: "auto",
+  maxWidth: rem(250),
 }));

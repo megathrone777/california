@@ -2,5 +2,6 @@ import { styled } from "~/theme";
 
 export const StyledWrapper = styled("div")(({ theme: { rem } }) => ({
   marginInline: "auto",
-  maxWidth: rem(1300),
+  maxWidth: rem(1320),
+  paddingInline: rem(10),
 }));

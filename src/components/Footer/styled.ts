@@ -7,7 +7,8 @@ export const StyledWrapper = styled("div")(({ theme: { colors, rem } }) => ({
 
 export const StyledLayout = styled("div")(({ theme: { rem } }) => ({
   marginInline: "auto",
-  maxWidth: rem(1300),
+  maxWidth: rem(1320),
+  paddingInline: rem(10),
 }));
 
 export const StyledContent = styled("div")(({ theme: { rem } }) => ({
@@ -38,8 +39,6 @@ export const StyledContentLayout = styled("div")(({ theme: { rem } }) => ({
   paddingRight: rem(75),
 }));
 
-export const StyledContentColumn = styled("div")({});
-
 export const StyledContentTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
   fontFamily: fonts.fontReadex,
   fontSize: rem(22),
@@ -59,9 +58,14 @@ export const StyledContentMenuLink = styled("a")({
   color: "black",
 });
 
+export const StyledCopyright = styled("div")(({ theme: { rem } }) => ({
+  height: rem(80),
+}));
+
 export const StyledCopyrightContent = styled("div")(({ theme: { rem } }) => ({
-  marginTop: rem(50),
+  alignItems: "center",
   display: "flex",
+  height: "100%",
   justifyContent: "space-between",
   paddingInline: rem(30),
 }));

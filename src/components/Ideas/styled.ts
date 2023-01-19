@@ -1,7 +1,5 @@
 import { styled } from "~/theme";
 
-export const StyledWrapper = styled("div")({});
-
 export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
   color: "black",
   fontFamily: fonts.fontReadex,
@@ -16,23 +14,37 @@ export const StyledText = styled("p")(({ theme: { fonts, rem } }) => ({
   fontFamily: fonts.fontReadex,
   fontSize: rem(13),
   lineHeight: rem(17),
-  marginBottom: rem(55),
+  marginBottom: rem(30),
   textAlign: "center",
 }));
 
-export const StyledLayout = styled("div")(({ theme: { rem } }) => ({
+export const StyledLayout = styled("div")(({ theme: { devices, rem } }) => ({
   display: "flex",
-  gap: rem(35),
+  columnGap: rem(35),
   marginBottom: rem(90),
+
+  [devices["desktop"]]: {
+    columnGap: rem(20),
+    marginBottom: rem(50),
+  },
 }));
 
-export const StyledContent = styled("div")(({ theme: { rem } }) => ({
+export const StyledContent = styled("div")(({ theme: { devices, rem } }) => ({
   fontSize: rem(24),
   lineHeight: rem(30),
   paddingTop: rem(10),
 
+  [devices["desktop"]]: {
+    fontSize: rem(18),
+    lineHeight: rem(22),
+  },
+
   p: {
     marginBottom: rem(30),
+
+    [devices["desktop"]]: {
+      marginBottom: rem(15),
+    },
   },
 }));
 

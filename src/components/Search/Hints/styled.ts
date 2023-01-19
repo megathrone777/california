@@ -1,17 +1,21 @@
 import { styled } from "~/theme";
 
-export const StyledWrapper = styled("div")(({ theme: { rem } }) => ({
-  maxWidth: rem(650),
+export const StyledWrapper = styled("div")(({ theme: { devices, rem } }) => ({
   margin: `0 auto ${rem(70)}`,
+  maxWidth: rem(650),
   minHeight: rem(87),
   position: "relative",
+
+  [devices["desktop"]]: {
+    marginBottom: rem(50),
+  },
 }));
 
 export const StyledList = styled("ul")(({ theme: { rem } }) => ({
   display: "flex",
   flexWrap: "wrap",
-  justifyContent: "center",
   gap: rem(7),
+  justifyContent: "center",
 }));
 
 export const StyledButton = styled("button")<{ isActive: boolean }>(

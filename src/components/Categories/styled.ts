@@ -1,9 +1,13 @@
 import { styled } from "~/theme";
 
-export const StyledWrapper = styled("div")(({ theme: { rem } }) => ({
+export const StyledWrapper = styled("div")(({ theme: { devices, rem } }) => ({
   marginBottom: rem(75),
   minHeight: rem(550),
   position: "relative",
+
+  [devices["desktop"]]: {
+    marginBottom: rem(50),
+  },
 }));
 
 export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
@@ -24,8 +28,12 @@ export const StyledText = styled("p")(({ theme: { fonts, rem } }) => ({
   textAlign: "center",
 }));
 
-export const StyledList = styled("div")(({ theme: { rem } }) => ({
+export const StyledList = styled("div")(({ theme: { devices, rem } }) => ({
   display: "flex",
   justifyContent: "space-between",
-  gap: rem(28),
+  columnGap: rem(28),
+
+  [devices["desktop"]]: {
+    columnGap: rem(14),
+  },
 }));

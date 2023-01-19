@@ -95,9 +95,9 @@ const Media: React.FC = () => {
             <StyledColumnText>Empower your work</StyledColumnText>
           </StyledColumnInfo>
 
-          <StyledColumnImage>
+          <div>
             <StyledContentMedia alt="media_img3" src="images/media_img3.jpg" />
-          </StyledColumnImage>
+          </div>
         </StyledColumn>
       </StyledWrapper>
     </StyledLayout>

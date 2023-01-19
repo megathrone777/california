@@ -2,11 +2,15 @@ import { Swiper } from "swiper/react";
 
 import { styled } from "~/theme";
 
-export const StyledWrapper = styled(Swiper)(({ theme: { rem } }) => ({
+export const StyledWrapper = styled(Swiper)(({ theme: { devices, rem } }) => ({
   borderRadius: rem(30),
   height: rem(550),
-  marginBottom: rem(75),
+  marginBottom: rem(45),
   overflow: "hidden",
+
+  [devices["desktop"]]: {
+    height: rem(500),
+  },
 
   "& > div.swiper-pagination": {
     bottom: rem(35),
