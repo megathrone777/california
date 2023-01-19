@@ -84,9 +84,11 @@ export const StyledCopyrightContentLeft = styled("div")(
   })
 );
 
-export const StyledCopyrightContentMedia = styled("div")(({ theme: { rem } }) => ({
+export const StyledCopyrightContentMedia = styled("button")(({ theme: { rem } }) => ({
   marginLeft: rem(7),
 }));
+
+export const StyledCopyrightContentMediaLink = styled("a")({});
 
 export const StyledCopyrightContentRight = styled("div")(
   ({ theme: { fonts, rem } }) => ({
