@@ -15,7 +15,6 @@ import { StyledWrapper } from "./styled";
 const Layout: React.FC = () => (
   <StyledWrapper>
     <Header />
-
     <Slider />
     <Media />
     <Products />

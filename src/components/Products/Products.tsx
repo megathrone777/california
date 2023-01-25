@@ -40,12 +40,7 @@ const Products: React.FC = () => {
         <StyledList>
           {products.map(
             ({ id, imageURL, ...rest }: TProduct): React.ReactElement => (
-              <Item
-                imageURL={`images/${imageURL}`}
-                key={id}
-                {...rest}
-                {...{ id }}
-              />
+              <Item imageURL={`images/${imageURL}`} key={id} {...{ id }} {...rest} />
             )
           )}
         </StyledList>
