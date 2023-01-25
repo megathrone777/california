@@ -13,7 +13,9 @@ export const StyledLayout = styled("div")(({ theme: { rem } }) => ({
 
 export const StyledContent = styled("div")(({ theme: { rem } }) => ({
   display: "flex",
+  height: "100%",
   paddingBlock: rem(45),
+  position: "relative",
 }));
 
 export const StyledLogo = styled("div")(({ theme: { rem } }) => ({

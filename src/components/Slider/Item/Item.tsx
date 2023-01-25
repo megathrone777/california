@@ -1,13 +1,8 @@
 import React from "react";
 
+import { Button } from "~/theme/components";
 import { TProps } from "./types";
-import {
-  StyledWrapper,
-  StyledContent,
-  StyledTitle,
-  StyledText,
-  StyledButton,
-} from "./styled";
+import { StyledWrapper, StyledContent, StyledTitle, StyledText } from "./styled";
 
 const Item: React.FC<TProps> = ({ description, imageURL, title }) => (
   <StyledWrapper>
@@ -21,7 +16,7 @@ const Item: React.FC<TProps> = ({ description, imageURL, title }) => (
         </StyledText>
       )}
 
-      <StyledButton type="button">Explore</StyledButton>
+      <Button type="button">Explore</Button>
     </StyledContent>
 
     <div>

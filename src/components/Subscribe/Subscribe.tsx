@@ -10,7 +10,7 @@ import {
   StyledButton,
 } from "./styled";
 
-const Thing: React.FC = () => (
+const Subscribe: React.FC = () => (
   <StyledWrapper>
     <StyledTitle>Never miss a thing</StyledTitle>
     <StyledText>
@@ -18,14 +18,14 @@ const Thing: React.FC = () => (
     </StyledText>
 
     <StyledMedia>
-      <img src="images/thing_img.png" alt="thing_img" />
+      <img alt="Subscribe image." src="images/subscribe_img.png" />
     </StyledMedia>
 
     <StyledForm>
-      <StyledInput type="text" placeholder="Email" />
+      <StyledInput placeholder="Email" type="text" />
       <StyledButton type="submit">Sign Up</StyledButton>
     </StyledForm>
   </StyledWrapper>
 );
 
-export { Thing };
+export { Subscribe };

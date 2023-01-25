@@ -24,13 +24,24 @@ export const StyledForm = styled("form")(({ theme: { rem } }) => ({
   marginBottom: rem(1),
 }));
 
-export const StyledInput = styled("input")(({ theme: { rem } }) => ({
+export const StyledInput = styled("input")(({ theme: { placeholder, rem } }) => ({
   height: rem(50),
   width: rem(285),
   backgroundColor: "transparent",
   paddingLeft: rem(30),
   borderRadius: `${rem(55)} 0 0 ${rem(55)}`,
   border: `${rem(1)} solid black`,
+
+  ":focus": {
+    ...placeholder({
+      color: "transparent",
+    }),
+  },
+
+  ...placeholder({
+    color: "black",
+    fontSize: rem(14),
+  }),
 }));
 
 export const StyledButton = styled("button")(({ theme: { rem } }) => ({

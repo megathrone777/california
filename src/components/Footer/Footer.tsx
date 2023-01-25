@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import { Loader } from "~/components";
 import { TFooterItem } from "./types";
 import {
   StyledWrapper,
@@ -22,6 +23,7 @@ import {
 
 const Footer: React.FC = () => {
   const [footerItems, setFooterItems] = useState<TFooterItem[]>([]);
+  const [categoriesLoading, toggleCategoriesLoading] = useState<boolean>(true);
 
   const getFooterItems = (): void => {
     fetch("data/footerData.json")
@@ -33,7 +35,7 @@ const Footer: React.FC = () => {
         setFooterItems([]);
       })
       .finally((): void => {
-        // toggleCategoriesLoading(false);
+        toggleCategoriesLoading(false);
       });
   };
 
@@ -47,7 +49,7 @@ const Footer: React.FC = () => {
         <StyledContent>
           <StyledLogo>
             <StyledLogoMedia>
-              <img src="images/header_logo.png" alt="Footer logo." />
+              <img src="images/logo_img.png" alt="Footer logo." />
             </StyledLogoMedia>
 
             <StyledLogoText>
@@ -84,6 +86,8 @@ const Footer: React.FC = () => {
               )}
             </StyledContentLayout>
           )}
+
+          {categoriesLoading && <Loader />}
         </StyledContent>
 
         <StyledCopyright>
@@ -108,8 +112,8 @@ const Footer: React.FC = () => {
               Powered by:<p>Webflow</p>
               <StyledCopyrightButton type="button">
                 <img
-                  src="images/copyright_arrow_img.png"
                   alt="copyright_arrow_img"
+                  src="images/copyright_arrow_img.png"
                 />
               </StyledCopyrightButton>
             </StyledCopyrightColumn>

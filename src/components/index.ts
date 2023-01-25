@@ -8,5 +8,5 @@ export { Products } from "./Products";
 export { Slider } from "./Slider";
 export { Ideas } from "./Ideas";
 export { Search } from "./Search";
-export { Thing } from "./Thing";
+export { Subscribe } from "./Subscribe";
 export { Footer } from "./Footer";

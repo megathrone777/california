@@ -5,7 +5,7 @@ import { StyledWrapper, StyledLink } from "./styled";
 const Logo: React.FC = () => (
   <StyledWrapper>
     <StyledLink href="/">
-      <img src="images/header_logo.png" alt="header_logo"/>
+      <img alt="Logo" src="images/logo_img.png" />
     </StyledLink>
   </StyledWrapper>
 );
