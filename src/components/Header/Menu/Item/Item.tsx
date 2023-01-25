@@ -1,12 +1,12 @@
 import React from "react";
 
-import { StyledWrapper, StyledLink } from "./styled";
+import { StyledLink } from "./styled";
 import { TProps } from "./types";
 
 const Item: React.FC<TProps> = ({ text }) => (
-  <StyledWrapper>
+  <li>
     <StyledLink href="#">{text}</StyledLink>
-  </StyledWrapper>
+  </li>
 );
 
 export { Item };

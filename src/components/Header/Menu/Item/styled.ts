@@ -1,7 +1,5 @@
 import { styled } from "~/theme";
 
-export const StyledWrapper = styled("li")({});
-
 export const StyledLink = styled("a")(({ theme: { devices, rem } }) => ({
   color: "black",
   textDecoration: "none",
