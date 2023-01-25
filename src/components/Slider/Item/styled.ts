@@ -32,3 +32,8 @@ export const StyledText = styled("p")(({ theme: { rem } }) => ({
   lineHeight: rem(19),
   marginBottom: rem(30),
 }));
+
+export const StyledMedia = styled("div")({
+  alignItems: "flex-end",
+  display: "flex",
+});
