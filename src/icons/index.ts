@@ -1,5 +1,5 @@
-export { HeaderSearchSvg } from "./HeaderSearchSvg";
-export { HeaderCartSvg } from "./HeaderCartSvg";
 export { HeaderArrowSvg } from "./HeaderArrowSvg";
-export { SliderArrowSvg } from "./SliderArrowSvg";
+export { HeaderCartSvg } from "./HeaderCartSvg";
+export { HeaderSearchSvg } from "./HeaderSearchSvg";
 export { SearchSvg } from "./SearchSvg";
+export { SliderArrowSvg } from "./SliderArrowSvg";
