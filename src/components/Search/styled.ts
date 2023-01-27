@@ -2,15 +2,6 @@ import { styled } from "~/theme";
 
 export const StyledWrapper = styled("div")({});
 
-export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
-  color: "black",
-  fontFamily: fonts.fontReadex,
-  fontSize: rem(42),
-  lineHeight: rem(52),
-  marginBottom: rem(25),
-  textAlign: "center",
-}));
-
 export const StyledForm = styled("form")(({ theme: { rem } }) => ({
   maxWidth: rem(650),
   height: rem(60),

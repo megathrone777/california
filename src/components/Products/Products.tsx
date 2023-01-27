@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Loader } from "~/components";
 import { Item } from "./Item";
 import { TProduct } from "./Item/types";
-import { StyledWrapper, StyledTitle, StyledText, StyledList } from "./styled";
+import { Heading } from "~/theme/components";
+import { StyledWrapper, StyledList } from "./styled";
 
 const Products: React.FC = () => {
   const [products, setProducts] = useState<TProduct[]>([]);
@@ -29,10 +30,10 @@ const Products: React.FC = () => {
 
   return (
     <StyledWrapper>
-      <StyledTitle>Save on our most selled items.</StyledTitle>
-      <StyledText>
-        Our new Limited Edition Winter Design BESPOKE 4-Door Flex™
-      </StyledText>
+      <Heading
+        title="Save on our most selled items."
+        text="Our new Limited Edition Winter Design BESPOKE 4-Door Flex™"
+      />
 
       {productsLoading && <Loader />}
 

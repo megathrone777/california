@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 
+import { Heading } from "~/theme/components";
 import {
   StyledLayout,
-  StyledTitle,
-  StyledText,
   StyledWrapper,
   StyledContent,
   StyledItem,
@@ -42,18 +41,18 @@ const Media: React.FC = () => {
 
   return (
     <StyledLayout>
-      <StyledTitle>Shop our latest offers and categories</StyledTitle>
-      <StyledText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque in est
+      <Heading
+        title="Shop our latest offers and categories"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque in est
         dui, aliquam, tempor. Faucibus morbi turpis. Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit.
-      </StyledText>
+        consectetur adipiscing elit."
+      />
 
       <StyledWrapper>
         <StyledContent>
           <StyledItem>
             <StyledItemImage>
-              <StyledContentMedia src="images/media_img1.jpg" alt="media_img1" />
+              <StyledContentMedia alt="Laptop" src="images/media_img1.jpg" />
             </StyledItemImage>
 
             <StyledItemInfo>

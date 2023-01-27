@@ -26,6 +26,11 @@ export const StyledTitle = styled("h2")(({ theme: { devices, fonts, rem } }) => 
     fontSize: rem(46),
     lineHeight: rem(50),
   },
+
+  [devices["tablet"]]: {
+    fontSize: rem(32),
+    lineHeight: rem(35),
+  },
 }));
 
 export const StyledText = styled("p")(({ theme: { rem } }) => ({
@@ -36,4 +41,5 @@ export const StyledText = styled("p")(({ theme: { rem } }) => ({
 export const StyledMedia = styled("div")({
   alignItems: "flex-end",
   display: "flex",
+  flex: "0 1 50%",
 });

@@ -1,8 +1,7 @@
 import React from "react";
 
+import { Heading } from "~/theme/components";
 import {
-  StyledText,
-  StyledTitle,
   StyledWrapper,
   StyledMedia,
   StyledForm,
@@ -12,10 +11,10 @@ import {
 
 const Subscribe: React.FC = () => (
   <StyledWrapper>
-    <StyledTitle>Never miss a thing</StyledTitle>
-    <StyledText>
-      Sign up for texts to be notified about our best offers on the perfect gifts.
-    </StyledText>
+    <Heading
+      title="Never miss a thing"
+      text="Sign up for texts to be notified about our best offers on the perfect gifts."
+    />
 
     <StyledMedia>
       <img alt="Subscribe image." src="images/subscribe_img.png" />

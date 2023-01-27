@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Loader } from "~/components";
 import { Item } from "./Item";
 import { TCategory } from "./Item/types";
-import { StyledWrapper, StyledTitle, StyledText, StyledList } from "./styled";
+import { Heading } from "~/theme/components";
+import { StyledWrapper, StyledList } from "./styled";
 
 const Categories: React.FC = () => {
   const [categories, setCategories] = useState<TCategory[]>([]);
@@ -29,10 +30,10 @@ const Categories: React.FC = () => {
 
   return (
     <StyledWrapper>
-      <StyledTitle>See the best around here</StyledTitle>
-      <StyledText>
-        Our new Limited Edition Winter Design BESPOKE 4-Door Flex™
-      </StyledText>
+      <Heading
+        title="See the best around here"
+        text="Our new Limited Edition Winter Design BESPOKE 4-Door Flex™"
+      />
 
       {categories && !!categories.length && (
         <StyledList>

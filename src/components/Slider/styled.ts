@@ -12,6 +12,10 @@ export const StyledWrapper = styled(Swiper)(({ theme: { devices, rem } }) => ({
     height: rem(500),
   },
 
+  [devices["tablet"]]: {
+    height: rem(400),
+  },
+
   "& > div.swiper-pagination": {
     bottom: rem(35),
     display: "flex",

@@ -6,7 +6,7 @@ export const StyledLink = styled("a")(({ theme: { devices, rem } }) => ({
   textTransform: "uppercase",
 
   [devices["tablet"]]: {
-    fontSize: rem(12),
+    fontSize: rem(13),
   },
 
   ":hover": {

@@ -1,15 +1,13 @@
 import React from "react";
 
+import { TProps } from "./types";
 import { styled } from "~/theme";
 
-const Button: React.FC<
-  React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  >
-> = ({ children }) => <StyledButton>{children}</StyledButton>;
+const Button: React.FC<TProps> = ({ children }) => (
+  <StyledButton>{children}</StyledButton>
+);
 
-const StyledButton = styled("button")(({ theme: { rem } }) => ({
+const StyledButton = styled("button")(({ theme: { devices, rem } }) => ({
   border: `${rem(1)} solid black`,
   borderRadius: rem(200),
   fontSize: rem(18),
@@ -20,6 +18,12 @@ const StyledButton = styled("button")(({ theme: { rem } }) => ({
   transitionProperty: "background-color, color",
   transitionTimingFunction: "ease-in",
   willChange: "contents",
+
+  [devices["tablet"]]: {
+    fontSize: rem(16),
+    height: rem(40),
+    maxWidth: rem(130),
+  },
 
   ":hover": {
     backgroundColor: "black",

@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 
 import { Loader } from "~/components";
+import { Heading } from "~/theme/components";
 import { SearchSvg } from "~/icons";
 import {
   StyledWrapper,
-  StyledTitle,
   StyledForm,
   StyledInput,
   StyledButton,
@@ -66,7 +66,7 @@ const Search: React.FC = () => {
 
   return (
     <StyledWrapper>
-      <StyledTitle>Looking for anything else?</StyledTitle>
+      <Heading title="Looking for anything else?" />
 
       <StyledForm action="#">
         <StyledInput

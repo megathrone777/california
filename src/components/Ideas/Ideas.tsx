@@ -1,13 +1,14 @@
 import React from "react";
 
-import { StyledText, StyledTitle, StyledLayout, StyledContent } from "./styled";
+import { Heading } from "~/theme/components";
+import { StyledLayout, StyledContent } from "./styled";
 
 const Ideas: React.FC = () => (
   <div>
-    <StyledTitle>Ideas have a place here</StyledTitle>
-    <StyledText>
-      Our new Limited Edition Winter Design BESPOKE 4-Door Flex™
-    </StyledText>
+    <Heading
+      title="Ideas have a place here"
+      text="Our new Limited Edition Winter Design BESPOKE 4-Door Flex™"
+    />
 
     <StyledLayout>
       <div>

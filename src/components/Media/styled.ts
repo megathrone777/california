@@ -37,29 +37,6 @@ export const StyledLayout = styled("div")(({ theme: { devices, rem } }) => ({
   },
 }));
 
-export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
-  color: "black",
-  fontFamily: fonts.fontReadex,
-  fontSize: rem(42),
-  lineHeight: rem(53),
-  marginBottom: rem(10),
-  textAlign: "center",
-}));
-
-export const StyledText = styled("p")(({ theme: { devices, fonts, rem } }) => ({
-  color: "black",
-  fontFamily: fonts.fontReadex,
-  fontSize: rem(14),
-  lineHeight: rem(17),
-  margin: `0 auto ${rem(55)}`,
-  maxWidth: rem(630),
-  textAlign: "center",
-
-  [devices["desktop"]]: {
-    marginBottom: rem(35),
-  },
-}));
-
 export const StyledContent = styled("div")(({ theme: { devices, rem } }) => ({
   display: "flex",
   flexBasis: rem(640),
@@ -76,6 +53,7 @@ export const StyledContent = styled("div")(({ theme: { devices, rem } }) => ({
 export const StyledColumn = styled("div")(
   ({ theme: { rem } }) => ({
     alignItems: "stretch",
+    backgroundColor: "white",
     display: "flex",
     flexDirection: "column",
     flexBasis: rem(310),

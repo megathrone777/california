@@ -7,6 +7,6 @@ export const StyledList = styled("ul")(({ theme: { devices, rem } }) => ({
   gap: rem(40),
 
   [devices["tablet"]]: {
-    gap: rem(20),
+    gap: rem(25),
   },
 }));

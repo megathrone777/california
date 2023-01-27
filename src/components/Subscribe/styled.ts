@@ -59,20 +59,3 @@ export const StyledButton = styled("button")(({ theme: { rem } }) => ({
     opacity: 0.5,
   },
 }));
-
-export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
-  color: "black",
-  fontFamily: fonts.fontReadex,
-  fontSize: rem(42),
-  lineHeight: rem(52),
-  marginBottom: rem(10),
-  textAlign: "center",
-}));
-
-export const StyledText = styled("p")(({ theme: { rem } }) => ({
-  color: "black",
-  fontSize: rem(16),
-  lineHeight: rem(19),
-  marginBottom: rem(15),
-  textAlign: "center",
-}));
