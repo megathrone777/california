@@ -35,6 +35,10 @@ export const StyledLayout = styled("div")(({ theme: { devices, rem } }) => ({
   [devices["desktop"]]: {
     marginBottom: rem(50),
   },
+
+  [devices["tablet"]]: {
+    marginBottom: rem(30),
+  },
 }));
 
 export const StyledContent = styled("div")(({ theme: { devices, rem } }) => ({
@@ -96,12 +100,18 @@ export const StyledColumnTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
   lineHeight: rem(19),
 }));
 
-export const StyledItemInfo = styled("div")(({ theme: { fonts, rem } }) => ({
-  color: "black",
-  fontFamily: fonts.fontReadex,
-  paddingRight: rem(40),
-  textAlign: "right",
-}));
+export const StyledItemInfo = styled("div")(
+  ({ theme: { devices, fonts, rem } }) => ({
+    color: "black",
+    fontFamily: fonts.fontReadex,
+    paddingRight: rem(40),
+    textAlign: "right",
+
+    [devices["tablet"]]: {
+      paddingRight: rem(20),
+    },
+  })
+);
 
 export const StyledContentTitle = styled("h2")(({ theme: { rem } }) => ({
   fontSize: rem(15),

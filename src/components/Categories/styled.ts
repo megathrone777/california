@@ -8,6 +8,10 @@ export const StyledWrapper = styled("div")(({ theme: { devices, rem } }) => ({
   [devices["desktop"]]: {
     marginBottom: rem(50),
   },
+
+  [devices["tablet"]]: {
+    marginBottom: rem(30),
+  },
 }));
 
 export const StyledList = styled("div")(({ theme: { devices, rem } }) => ({

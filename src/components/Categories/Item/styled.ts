@@ -9,11 +9,15 @@ export const StyledWrapper = styled("div")(({ theme: { colors, rem } }) => ({
   textAlign: "center",
 }));
 
-export const StyledTitle = styled("h2")(({ theme: { fonts, rem } }) => ({
+export const StyledTitle = styled("h2")(({ theme: { devices, fonts, rem } }) => ({
   fontFamily: fonts.fontReadex,
   fontSize: rem(28),
   lineHeight: rem(35),
   marginBottom: rem(30),
+
+  [devices["tablet"]]: {
+    fontSize: rem(24),
+  },
 }));
 
 export const StyledSubtitle = styled("p")(({ theme: { fonts, rem } }) => ({
@@ -27,6 +31,9 @@ export const StyledHelper = styled("div")(({ theme: { rem } }) => ({
 }));
 
 export const StyledMedia = styled("div")(({ theme: { rem } }) => ({
+  alignItems: "center",
+  display: "flex",
   height: rem(250),
+  justifyContent: "center",
   textAlign: "center",
 }));

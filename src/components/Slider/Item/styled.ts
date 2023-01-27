@@ -30,6 +30,7 @@ export const StyledTitle = styled("h2")(({ theme: { devices, fonts, rem } }) => 
   [devices["tablet"]]: {
     fontSize: rem(32),
     lineHeight: rem(35),
+    marginBottom: rem(20),
   },
 }));
 

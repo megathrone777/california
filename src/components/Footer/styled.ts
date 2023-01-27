@@ -11,16 +11,24 @@ export const StyledLayout = styled("div")(({ theme: { rem } }) => ({
   paddingInline: rem(10),
 }));
 
-export const StyledContent = styled("div")(({ theme: { rem } }) => ({
+export const StyledContent = styled("div")(({ theme: { devices, rem } }) => ({
   display: "flex",
   height: "100%",
   paddingBlock: rem(45),
   position: "relative",
+
+  [devices["tablet"]]: {
+    flexDirection: "column",
+  },
 }));
 
-export const StyledLogo = styled("div")(({ theme: { rem } }) => ({
+export const StyledLogo = styled("div")(({ theme: { devices, rem } }) => ({
   maxWidth: rem(370),
   padding: `0 ${rem(40)} 0 ${rem(25)}`,
+
+  [devices["tablet"]]: {
+    marginBottom: rem(40),
+  },
 }));
 
 export const StyledLogoMedia = styled("div")(({ theme: { rem } }) => ({
@@ -33,12 +41,25 @@ export const StyledLogoText = styled("div")(({ theme: { rem } }) => ({
   lineHeight: rem(19),
 }));
 
-export const StyledContentLayout = styled("div")(({ theme: { rem } }) => ({
+export const StyledContentLayout = styled("div")(({ theme: { devices, rem } }) => ({
   display: "flex",
   flex: "0 1 100%",
   justifyContent: "space-around",
   width: "100%",
   paddingRight: rem(75),
+
+  [devices["tablet"]]: {
+    flex: "none",
+    justifyContent: "flex-start",
+    paddingRight: 0,
+    paddingLeft: rem(25),
+  },
+}));
+
+export const StyledContentColumn = styled("div")(({ theme: { devices, rem } }) => ({
+  [devices["tablet"]]: {
+    marginRight: rem(40),
+  },
 }));
 
 export const StyledContentTitle = styled("h2")(({ theme: { fonts, rem } }) => ({

@@ -11,6 +11,7 @@ import {
   StyledLogoText,
   StyledContentLayout,
   StyledContentTitle,
+  StyledContentColumn,
   StyledContentMenu,
   StyledContentMenuList,
   StyledContentMenuItem,
@@ -62,7 +63,7 @@ const Footer: React.FC = () => {
             <StyledContentLayout>
               {footerItems.map(
                 ({ id, items, title }: TFooterItem): React.ReactElement => (
-                  <div key={id}>
+                  <StyledContentColumn key={id}>
                     <StyledContentTitle>{title}</StyledContentTitle>
 
                     <StyledContentMenu>
@@ -81,7 +82,7 @@ const Footer: React.FC = () => {
                         )}
                       </StyledContentMenuList>
                     </StyledContentMenu>
-                  </div>
+                  </StyledContentColumn>
                 )
               )}
             </StyledContentLayout>

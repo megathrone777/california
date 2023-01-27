@@ -9,6 +9,10 @@ export const StyledLayout = styled("div")(({ theme: { devices, rem } }) => ({
     columnGap: rem(20),
     marginBottom: rem(50),
   },
+
+  [devices["tablet"]]: {
+    marginBottom: rem(30),
+  },
 }));
 
 export const StyledContent = styled("div")(({ theme: { devices, rem } }) => ({
