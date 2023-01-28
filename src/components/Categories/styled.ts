@@ -22,4 +22,9 @@ export const StyledList = styled("div")(({ theme: { devices, rem } }) => ({
   [devices["desktop"]]: {
     columnGap: rem(14),
   },
+
+  [devices["mobile"]]: {
+    flexDirection: "column",
+    rowGap: rem(10),
+  },
 }));

@@ -2,6 +2,7 @@ import React from "react";
 
 import { Item } from "./Item";
 import { TMenuItem } from "./Item/types";
+import { TProps } from "./types";
 import { StyledList, StyledWrapper } from "./styled";
 
 const items: TMenuItem[] = [

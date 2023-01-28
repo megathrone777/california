@@ -32,9 +32,17 @@ const Slider: React.FC = () => {
 
   return (
     <StyledWrapper
+      breakpoints={{
+        767: {
+          pagination: { clickable: true, enabled: true },
+        },
+      }}
       loop
       modules={[Pagination, Scrollbar]}
-      pagination={{ clickable: true }}
+      navigation
+      pagination={{
+        enabled: false,
+      }}
       slidesPerView={1}
       spaceBetween={50}
     >
