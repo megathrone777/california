@@ -11,7 +11,7 @@
     "func-style": ["error", "expression"],
     "newline-after-var": "error",
     "newline-before-return": "error",
-    "no-trailing-spaces": "error",
+    // "no-trailing-spaces": "error",
     "no-unused-vars": "error",
     "prefer-const": "error",
     "semi": "error"

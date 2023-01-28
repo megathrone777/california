@@ -11,6 +11,7 @@ import {
   StyledHints,
   StyledHintsList,
   StyledHintsButton,
+  StyledClear,
 } from "./styled";
 
 const Search: React.FC = () => {
@@ -33,12 +34,14 @@ const Search: React.FC = () => {
       });
   };
 
-  const handleInputValue = ({
-    currentTarget,
-  }: React.SyntheticEvent<HTMLInputElement>): void => {
+  const handleInputValue = ({ currentTarget }: React.SyntheticEvent<HTMLInputElement>): void => {
     const { value } = currentTarget;
 
     setInputValue(value);
+  };
+
+  const handleSearchClear = (): void => {
+    setInputValue("");
   };
 
   const handleHintClick = useCallback(
@@ -79,6 +82,12 @@ const Search: React.FC = () => {
         <StyledButton type="submit">
           <SearchSvg />
         </StyledButton>
+
+        { inputValue && (
+          <StyledClear type="button" onClick={handleSearchClear}>
+            X
+          </StyledClear>
+        )}
       </StyledForm>
 
       <StyledHints>
