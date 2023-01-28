@@ -8,6 +8,7 @@ import {
   StyledTitle,
   StyledMedia,
   StyledText,
+  StyledImage,
 } from "./styled";
 
 const Item: React.FC<TProps> = ({ description, imageURL, title }) => (
@@ -26,7 +27,7 @@ const Item: React.FC<TProps> = ({ description, imageURL, title }) => (
     </StyledContent>
 
     <StyledMedia>
-      <img alt={title} src={`images/${imageURL}`} />
+      <StyledImage alt={title} src={`images/${imageURL}`} />
     </StyledMedia>
   </StyledWrapper>
 );

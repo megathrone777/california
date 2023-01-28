@@ -24,7 +24,7 @@ export const StyledForm = styled("form")(({ theme: { rem } }) => ({
   marginBottom: rem(1),
 }));
 
-export const StyledInput = styled("input")(({ theme: { placeholder, rem } }) => ({
+export const StyledInput = styled("input")(({ theme: { devices, placeholder, rem } }) => ({
   height: rem(50),
   width: rem(285),
   backgroundColor: "transparent",
@@ -42,6 +42,10 @@ export const StyledInput = styled("input")(({ theme: { placeholder, rem } }) => 
     color: "black",
     fontSize: rem(14),
   }),
+
+  [devices["mobile"]]: {
+    width: rem(170),
+  },
 }));
 
 export const StyledButton = styled("button")(({ theme: { rem } }) => ({

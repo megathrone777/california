@@ -1,9 +1,13 @@
 import { styled } from "~/theme";
 
-export const StyledWrapper = styled("div")({
+export const StyledWrapper = styled("div")(({ theme: { devices } }) => ({
   flex: "0 1 25%",
   width: "25%",
-});
+
+  [devices["mobile"]]: {
+    width: "100%",
+  },
+}));
 
 export const StyledMedia = styled("div")(({ theme: { devices, rem } }) => ({
   height: rem(215),
@@ -48,6 +52,10 @@ export const StyledDescription = styled("div")(({ theme: { devices, rem } }) => 
   [devices["tablet"]]: {
     fontSize: rem(13),
     minHeight: rem(85),
+  },
+
+  [devices["mobile"]]: {
+    minHeight: "0",
   },
 }));
 

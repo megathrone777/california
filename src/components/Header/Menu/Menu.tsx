@@ -2,6 +2,7 @@ import React from "react";
 
 import { Item } from "./Item";
 import { TMenuItem } from "./Item/types";
+import { TProps } from "./types";
 import { StyledList, StyledWrapper } from "./styled";
 
 const items: TMenuItem[] = [
@@ -25,8 +26,8 @@ const items: TMenuItem[] = [
 
 console.log(items);
 
-const Menu: React.FC = () => (
-  <StyledWrapper>
+const Menu: React.FC<TProps> = ({ isOpened }) => (
+  <StyledWrapper {...{ isOpened }}>
     <StyledList>
       <Item text="All Products" />
       <Item text="Solutions" />

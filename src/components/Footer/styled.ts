@@ -1,8 +1,12 @@
 import { styled } from "~/theme";
 
-export const StyledWrapper = styled("div")(({ theme: { colors, rem } }) => ({
+export const StyledWrapper = styled("div")(({ theme: { devices, colors, rem } }) => ({
   height: rem(380),
   backgroundColor: colors.grayLightest,
+
+  [devices["mobile"]]: {
+    height: "auto",
+  },
 }));
 
 export const StyledLayout = styled("div")(({ theme: { rem } }) => ({
@@ -54,6 +58,11 @@ export const StyledContentLayout = styled("div")(({ theme: { devices, rem } }) =
     paddingRight: 0,
     paddingLeft: rem(25),
   },
+
+  [devices["mobile"]]: {
+    flexDirection: "column",
+    rowGap: rem(15),
+  },
 }));
 
 export const StyledContentColumn = styled("div")(({ theme: { devices, rem } }) => ({
@@ -81,16 +90,26 @@ export const StyledContentMenuLink = styled("a")({
   color: "black",
 });
 
-export const StyledCopyright = styled("div")(({ theme: { rem } }) => ({
+export const StyledCopyright = styled("div")(({ theme: { devices, rem } }) => ({
   height: rem(80),
+
+  [devices["mobile"]]: {
+    height: "auto",
+    paddingBlock: rem(10),
+  },
 }));
 
-export const StyledCopyrightContent = styled("div")(({ theme: { rem } }) => ({
+export const StyledCopyrightContent = styled("div")(({ theme: { devices, rem } }) => ({
   alignItems: "center",
   display: "flex",
   height: "100%",
   justifyContent: "space-between",
   paddingInline: rem(30),
+
+  [devices["mobile"]]: {
+    flexDirection: "column",
+    rowGap: rem(10),
+  },
 }));
 
 export const StyledCopyrightColumn = styled("div")(({ theme: { fonts, rem } }) => ({

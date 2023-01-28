@@ -9,6 +9,10 @@ export const StyledLink = styled("a")(({ theme: { devices, rem } }) => ({
     fontSize: rem(13),
   },
 
+  [devices["mobile"]]: {
+    fontSize: rem(22),
+  },
+
   ":hover": {
     opacity: 0.7,
   },

@@ -1,18 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { HeaderSearchSvg, HeaderCartSvg } from "~/icons";
-import { StyledButton, StyledWrapper } from "./styled";
+import { TProps } from "./types";
+import {
+  StyledButton,
+  StyledWrapper,
+  StyledBurger,
+  StyledBurgerLine,
+} from "./styled";
 
-const Buttons: React.FC = () => (
-  <StyledWrapper>
-    <StyledButton type="button">
-      <HeaderSearchSvg />
-    </StyledButton>
+const Buttons: React.FC<TProps> = ({ onMenuToggle }) => {
+  const [menuIsOpened, toggleMenu] = useState<boolean>(false);
 
-    <StyledButton type="button">
-      <HeaderCartSvg />
-    </StyledButton>
-  </StyledWrapper>
-);
+  const handleMenuToggle = (): void => {
+    toggleMenu(!menuIsOpened);
+    onMenuToggle();
+  };
+
+  return (
+    <StyledWrapper>
+      <StyledButton type="button">
+        <HeaderSearchSvg />
+      </StyledButton>
+
+      <StyledButton type="button">
+        <HeaderCartSvg />
+      </StyledButton>
+
+      <StyledBurger isOpened={menuIsOpened} onClick={handleMenuToggle} type="button">
+        <StyledBurgerLine />
+        <StyledBurgerLine />
+        <StyledBurgerLine />
+      </StyledBurger>
+    </StyledWrapper>
+  );
+};
 
 export { Buttons };

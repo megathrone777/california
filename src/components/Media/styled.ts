@@ -27,6 +27,12 @@ export const StyledWrapper = styled("div")(({ theme: { devices, rem } }) => ({
     columnGap: rem(10),
     height: rem(550),
   },
+
+  [devices["mobile"]]: {
+    flexDirection: "column",
+    rowGap: rem(10),
+    height: "auto",
+  },
 }));
 
 export const StyledLayout = styled("div")(({ theme: { devices, rem } }) => ({
@@ -52,10 +58,16 @@ export const StyledContent = styled("div")(({ theme: { devices, rem } }) => ({
   [devices["desktop"]]: {
     rowGap: rem(10),
   },
+
+  [devices["mobile"]]: {
+    flexDirection: "column",
+    rowGap: rem(10),
+    maxWidth: "100%",
+  },
 }));
 
 export const StyledColumn = styled("div")(
-  ({ theme: { rem } }) => ({
+  ({ theme: { devices, rem } }) => ({
     alignItems: "stretch",
     backgroundColor: "white",
     display: "flex",
@@ -66,6 +78,11 @@ export const StyledColumn = styled("div")(
     maxWidth: rem(310),
     position: "relative",
     textAlign: "center",
+
+    [devices["mobile"]]: {
+      paddingBlock: rem(20),
+      maxWidth: "100%",
+    },
   }),
   shadowStyles
 );
@@ -80,7 +97,7 @@ export const StyledItem = styled("div")(
 );
 
 export const StyledItemDown = styled("div")<{ isVisible: boolean }>(
-  ({ isVisible, theme: { rem } }) => ({
+  ({ isVisible, theme: { devices, rem } }) => ({
     alignItems: "center",
     display: "flex",
     flexGrow: 1,
@@ -89,6 +106,10 @@ export const StyledItemDown = styled("div")<{ isVisible: boolean }>(
     transform: `translateY(${isVisible ? 0 : rem(30)})`,
     transitionDelay: "1s",
     transition: "transform 0.7s ease-in-out",
+
+    [devices["mobile"]]: {
+      transform: "none",
+    },
   }),
   shadowStyles
 );

@@ -13,6 +13,10 @@ export const StyledLayout = styled("div")(({ theme: { devices, rem } }) => ({
   [devices["tablet"]]: {
     marginBottom: rem(30),
   },
+
+  [devices["mobile"]]: {
+    flexDirection: "column",
+  },
 }));
 
 export const StyledContent = styled("div")(({ theme: { devices, rem } }) => ({

@@ -14,7 +14,11 @@ export const StyledWrapper = styled("div")(({ theme: { devices, rem } }) => ({
   },
 }));
 
-export const StyledList = styled("div")(({ theme: { rem } }) => ({
+export const StyledList = styled("div")(({ theme: { devices, rem } }) => ({
   display: "flex",
   gap: rem(30),
+
+  [devices["mobile"]]: {
+    flexDirection: "column",
+  },
 }));
