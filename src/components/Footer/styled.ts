@@ -24,6 +24,11 @@ export const StyledContent = styled("div")(({ theme: { devices, rem } }) => ({
   [devices["tablet"]]: {
     flexDirection: "column",
   },
+
+  [devices["mobile"]]: {
+    flexDirection: "column",
+    paddingBottom: rem(1),
+  },
 }));
 
 export const StyledLogo = styled("div")(({ theme: { devices, rem } }) => ({

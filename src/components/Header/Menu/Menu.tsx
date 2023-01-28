@@ -24,17 +24,16 @@ const items: TMenuItem[] = [
   },
 ];
 
-const Menu: React.FC = () => (
-  <StyledWrapper>
-    {items && !!items.length && (
-      <StyledList>
-        {items.map(
-          ({ id, text }: TMenuItem, index: number): React.ReactElement => (
-            <Item key={`${id}-${index}`} text={text} />
-          )
-        )}
-      </StyledList>
-    )}
+console.log(items);
+
+const Menu: React.FC<TProps> = ({ isOpened }) => (
+  <StyledWrapper {...{ isOpened }}>
+    <StyledList>
+      <Item text="All Products" />
+      <Item text="Solutions" />
+      <Item text="About" />
+      <Item text="Support" />
+    </StyledList>
   </StyledWrapper>
 );
 

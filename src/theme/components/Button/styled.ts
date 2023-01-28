@@ -11,6 +11,7 @@ export const StyledButton = styled("button")(({ theme: { devices, rem } }) => ({
   transitionProperty: "background-color, color",
   transitionTimingFunction: "ease-in",
   willChange: "contents",
+  color: "black",
 
   [devices["tablet"]]: {
     fontSize: rem(16),
