@@ -42,6 +42,15 @@ export const StyledButton = styled("button")(({ theme: { rem } }) => ({
   width: rem(30),
 }));
 
+export const StyledClear = styled("button")(({ theme: { fonts, rem } }) => ({
+  position: "absolute",
+  top: `calc(50% - ${rem(12)})`,
+  right: rem(20),
+  width: rem(30),
+  fontSize: rem(20),
+  fontFamily: fonts.fontReadex,
+}));
+
 export const StyledHints = styled("div")(({ theme: { devices, rem } }) => ({
   margin: `0 auto ${rem(70)}`,
   maxWidth: rem(650),

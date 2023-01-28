@@ -72,7 +72,7 @@ export const StyledContentMenu = styled("div")({});
 
 export const StyledContentMenuList = styled("ul")({});
 
-export const StyledContentMenuItem = styled("div")(({ theme: { rem } }) => ({
+export const StyledContentMenuItem = styled("li")(({ theme: { rem } }) => ({
   marginBottom: rem(15),
 }));
 
