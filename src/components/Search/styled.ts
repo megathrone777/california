@@ -49,6 +49,7 @@ export const StyledClear = styled("button")(({ theme: { fonts, rem } }) => ({
   width: rem(30),
   fontSize: rem(20),
   fontFamily: fonts.fontReadex,
+  color: "black",
 }));
 
 export const StyledHints = styled("div")(({ theme: { devices, rem } }) => ({
@@ -71,6 +72,7 @@ export const StyledHintsList = styled("ul")(({ theme: { rem } }) => ({
 
 export const StyledHintsButton = styled("button")<{ isActive: boolean }>(
   ({ isActive, theme: { colors, rem } }) => ({
+    color: "black",
     height: rem(40),
     fontSize: rem(14),
     lineHeight: rem(17),
